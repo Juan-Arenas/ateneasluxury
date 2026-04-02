@@ -110,7 +110,7 @@ nav.scrolled{background:rgba(10,9,8,.96);backdrop-filter:blur(14px);border-botto
 /* Each card in carousel: fixed width */
 .c-card{flex:0 0 calc(33.333% - 16px);margin:0 8px}
 @media(max-width:1100px){.c-card{flex:0 0 calc(50% - 16px)}}
-@media(max-width:720px){.c-card{flex:0 0 calc(85vw);margin:0 8px}}
+@media(max-width:720px){.c-card{flex:0 0 100%;margin:0}}
 
 /* Carousel nav arrows */
 .car-arrow{position:absolute;top:40%;transform:translateY(-50%);z-index:10;width:48px;height:48px;background:rgba(10,9,8,.75);border:1px solid rgba(201,168,76,.35);color:var(--gold);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s,border-color .3s,transform .2s;backdrop-filter:blur(8px)}
@@ -728,11 +728,12 @@ function updateCarPosition(animate){
   var grid=document.getElementById('catGrid');
   if(!grid)return;
   var outer=document.getElementById('carouselOuter');
-  var cardW=outer.offsetWidth/carPerPage;
+  var outerW=outer.offsetWidth;
+  /* card width = outer / perPage, but on mobile cards are 100% so just outerW */
+  var cardW=outerW/carPerPage;
   var offset=carIdx*cardW;
   grid.style.transition=animate?'transform .65s cubic-bezier(.25,.46,.45,.94)':'none';
   grid.style.transform='translateX(-'+offset+'px)';
-  /* update arrow states */
   var prev=document.getElementById('carPrev');
   var next=document.getElementById('carNext');
   if(prev)prev.style.opacity=carIdx<=0?'0.3':'1';
@@ -785,7 +786,8 @@ function onDragEnd(){
   if(!isDragging)return;
   isDragging=false;
   var outer=document.getElementById('carouselOuter');
-  var threshold=outer.offsetWidth*0.18;
+  var cardW=outer.offsetWidth/carPerPage;
+  var threshold=cardW*0.25;
   if(dragDeltaX<-threshold)carMove(1);
   else if(dragDeltaX>threshold)carMove(-1);
   else updateCarPosition(true);
