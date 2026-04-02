@@ -6,7 +6,7 @@
 <title>Atenea's Luxury — Salas de Lujo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --gold:#C9A84C;--gold-l:#E8C97A;--gold-d:#9A7A2E;
@@ -97,13 +97,35 @@ nav.scrolled{background:rgba(10,9,8,.96);backdrop-filter:blur(14px);border-botto
 .marquee-dot{color:rgba(10,9,8,.35);font-size:.6rem;align-self:center}
 
 /* ══ CATALOG ══ */
-.catalog{padding:110px 40px;background:var(--dk);position:relative;z-index:1}
+.catalog{padding:110px 0 110px;background:var(--dk);position:relative;z-index:1}
+.catalog>.s-lbl,.catalog>.filter-tabs{padding:0 40px}
 .filter-tabs{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:56px}
 .ftab{background:transparent;border:1px solid rgba(201,168,76,.2);color:var(--cr2);padding:8px 24px;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;font-family:'Montserrat',sans-serif;transition:all .28s;border-radius:0}
 .ftab.active,.ftab:hover{background:var(--gold);border-color:var(--gold);color:var(--dk)}
 
-/* UNIFORM GRID — always 3 cols desktop, 2 tablet, 1 mobile */
-.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1380px;margin:0 auto}
+/* ══ CAROUSEL WRAPPER ══ */
+.carousel-outer{position:relative;overflow:hidden;width:100%}
+.cat-grid{display:flex;transition:transform .65s cubic-bezier(.25,.46,.45,.94);will-change:transform}
+
+/* Each card in carousel: fixed width */
+.c-card{flex:0 0 calc(33.333% - 16px);margin:0 8px}
+@media(max-width:1100px){.c-card{flex:0 0 calc(50% - 16px)}}
+@media(max-width:720px){.c-card{flex:0 0 calc(85vw);margin:0 8px}}
+
+/* Carousel nav arrows */
+.car-arrow{position:absolute;top:40%;transform:translateY(-50%);z-index:10;width:48px;height:48px;background:rgba(10,9,8,.75);border:1px solid rgba(201,168,76,.35);color:var(--gold);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s,border-color .3s,transform .2s;backdrop-filter:blur(8px)}
+.car-arrow:hover{background:var(--gold);color:var(--dk);border-color:var(--gold)}
+.car-arrow:active{transform:translateY(-50%) scale(.94)}
+.car-prev{left:16px}
+.car-next{right:16px}
+.car-arrow svg{transition:transform .2s}
+.car-prev:hover svg{transform:translateX(-2px)}
+.car-next:hover svg{transform:translateX(2px)}
+
+/* Dots */
+.car-dots{display:flex;justify-content:center;gap:8px;margin-top:36px;padding-bottom:4px}
+.car-dot{width:6px;height:6px;border-radius:0;background:rgba(201,168,76,.22);border:none;cursor:pointer;transition:background .3s,width .3s;padding:0}
+.car-dot.active{background:var(--gold);width:22px}
 
 /* CARD — uniform height always */
 .c-card{background:var(--dk3);border:1px solid rgba(201,168,76,.08);position:relative;overflow:hidden;transition:border-color .45s,box-shadow .45s;border-radius:0}
@@ -232,7 +254,6 @@ footer{background:var(--dk2);border-top:1px solid rgba(201,168,76,.12);padding:4
 
 /* ══ RESPONSIVE ══ */
 @media(max-width:1100px){
-  .cat-grid{grid-template-columns:repeat(2,1fr)}
   .about-inner{grid-template-columns:1fr;gap:48px}
   .about-img{aspect-ratio:16/9}
 }
@@ -240,8 +261,9 @@ footer{background:var(--dk2);border-top:1px solid rgba(201,168,76,.12);padding:4
   nav{padding:16px 20px}
   .nav-links{display:none}
   .nav-burger{display:flex}
-  .features,.catalog,.stats,.about,.payment,.location,footer{padding:80px 20px}
-  .cat-grid{grid-template-columns:1fr}
+  .features,.stats,.about,.payment,.location,footer{padding:80px 20px}
+  .catalog{padding:80px 0}
+  .catalog>.s-lbl,.catalog>.filter-tabs{padding:0 20px}
   .c-price-mobile{display:flex}
   .tap-hint{display:block}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:24px}
@@ -250,6 +272,7 @@ footer{background:var(--dk2);border-top:1px solid rgba(201,168,76,.12);padding:4
   .pay-grid{grid-template-columns:1fr}
   footer{flex-direction:column;align-items:flex-start}
   .hero-btns{flex-direction:column;align-items:center}
+  .car-arrow{width:38px;height:38px}
 }
 </style>
 </head>
@@ -375,7 +398,16 @@ footer{background:var(--dk2);border-top:1px solid rgba(201,168,76,.12);padding:4
     <button class="ftab" onclick="filterCat('sectional',this)">Seccionales</button>
     <button class="ftab" onclick="filterCat('silla',this)">Sillas &amp; Sillones</button>
   </div>
-  <div class="cat-grid" id="catGrid"></div>
+  <div class="carousel-outer" id="carouselOuter">
+    <button class="car-arrow car-prev" id="carPrev" onclick="carMove(-1)" aria-label="Anterior">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polyline points="11,3 5,9 11,15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="cat-grid" id="catGrid"></div>
+    <button class="car-arrow car-next" id="carNext" onclick="carMove(1)" aria-label="Siguiente">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><polyline points="7,3 13,9 7,15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  <div class="car-dots" id="carDots"></div>
 </section>
 
 <!-- ══ STATS ══ -->
@@ -580,17 +612,34 @@ function animPrice(el,target,dur){
   requestAnimationFrame(step);
 }
 
-var activeFilter='all';
-var tappedCard=null;
+/* ══ CAROUSEL STATE ══ */
+var carIdx=0;
+var carItems=[];
+var carPerPage=3;
+var isDragging=false,dragStartX=0,dragDeltaX=0;
+
+function getCarPerPage(){
+  var w=window.innerWidth;
+  if(w<=720)return 1;
+  if(w<=1100)return 2;
+  return 3;
+}
 
 function renderCatalog(filter){
+  carIdx=0;
+  carItems=filter==='all'?catalog:catalog.filter(function(i){return i.tag===filter;});
+  carPerPage=getCarPerPage();
+  buildCarousel();
+}
+
+function buildCarousel(){
   var grid=document.getElementById('catGrid');
   grid.innerHTML='';
-  var items=filter==='all'?catalog:catalog.filter(function(i){return i.tag===filter;});
-  items.forEach(function(item,idx){
+  carPerPage=getCarPerPage();
+
+  carItems.forEach(function(item,idx){
     var card=document.createElement('div');
     card.className='c-card rv';
-    card.style.transitionDelay=(idx*.045)+'s';
 
     card.innerHTML=
       '<div class="c-img">'+
@@ -603,12 +652,11 @@ function renderCatalog(filter){
             '<div class="price-num" data-target="'+item.price+'">'+fmtCOP(item.price)+'</div>'+
           '</div>'+
           '<div class="ov-btns">'+
-            '<button class="o-btn" data-item="'+idx+'" data-f="'+filter+'">Ver detalle</button>'+
+            '<button class="o-btn" data-item="'+idx+'" data-f="all">Ver detalle</button>'+
             '<button class="o-ghost" onclick="window.location.href=\'#ubicacion\'">Consultar</button>'+
           '</div>'+
         '</div>'+
       '</div>'+
-      /* Mobile: price always visible */
       '<div class="c-price-mobile">'+
         '<span class="pm-val">'+fmtCOP(item.price)+'</span>'+
         '<span class="pm-lbl">&nbsp;COP</span>'+
@@ -620,7 +668,7 @@ function renderCatalog(filter){
         '</button>'+
       '</div>';
 
-    /* Desktop hover price animation */
+    /* Desktop hover price */
     var priceEl=card.querySelector('.price-num');
     var target=item.price;
     var animated=false;
@@ -630,42 +678,126 @@ function renderCatalog(filter){
     });
     card.addEventListener('mouseleave',function(){
       if(isMobile)return;
-      animated=false;
-      priceEl.textContent=fmtCOP(target);
+      animated=false;priceEl.textContent=fmtCOP(target);
     });
 
-    /* Mobile tap to reveal */
+    /* Mobile tap */
     card.addEventListener('click',function(e){
       if(!isMobile)return;
       if(e.target.closest('.c-heart'))return;
       if(e.target.closest('.o-btn')||e.target.closest('.o-ghost'))return;
-      if(tappedCard&&tappedCard!==card){
-        tappedCard.classList.remove('tapped');
-        var op=tappedCard.querySelector('.price-num');
-        if(op)op.textContent=fmtCOP(+op.dataset.target);
-      }
+      if(tappedCard&&tappedCard!==card){tappedCard.classList.remove('tapped');var op=tappedCard.querySelector('.price-num');if(op)op.textContent=fmtCOP(+op.dataset.target);}
       var wasTapped=card.classList.contains('tapped');
-      card.classList.toggle('tapped');
-      tappedCard=wasTapped?null:card;
-      if(!wasTapped){
-        animPrice(priceEl,target,700);
-      } else {
-        priceEl.textContent=fmtCOP(target);
-      }
+      card.classList.toggle('tapped');tappedCard=wasTapped?null:card;
+      if(!wasTapped)animPrice(priceEl,target,700);
+      else priceEl.textContent=fmtCOP(target);
     });
 
-    /* Detail button */
+    /* Detail btn */
     card.querySelector('.o-btn[data-item]').addEventListener('click',function(e){
       e.stopPropagation();
-      var fi=this.getAttribute('data-f');
-      var arr=fi==='all'?catalog:catalog.filter(function(i){return i.tag===fi;});
-      openMod(arr[+this.getAttribute('data-item')]);
+      openMod(carItems[+this.getAttribute('data-item')]);
     });
 
     grid.appendChild(card);
   });
+
+  updateCarPosition(false);
+  buildDots();
   observeRv();
+  initCarDrag();
 }
+
+function carMaxIdx(){
+  return Math.max(0, carItems.length - carPerPage);
+}
+
+function carMove(dir){
+  carIdx=Math.max(0,Math.min(carIdx+dir,carMaxIdx()));
+  updateCarPosition(true);
+  buildDots();
+}
+
+function carGoTo(i){
+  carIdx=i;
+  updateCarPosition(true);
+  buildDots();
+}
+
+function updateCarPosition(animate){
+  var grid=document.getElementById('catGrid');
+  if(!grid)return;
+  var outer=document.getElementById('carouselOuter');
+  var cardW=outer.offsetWidth/carPerPage;
+  var offset=carIdx*cardW;
+  grid.style.transition=animate?'transform .65s cubic-bezier(.25,.46,.45,.94)':'none';
+  grid.style.transform='translateX(-'+offset+'px)';
+  /* update arrow states */
+  var prev=document.getElementById('carPrev');
+  var next=document.getElementById('carNext');
+  if(prev)prev.style.opacity=carIdx<=0?'0.3':'1';
+  if(next)next.style.opacity=carIdx>=carMaxIdx()?'0.3':'1';
+}
+
+function buildDots(){
+  var dots=document.getElementById('carDots');
+  if(!dots)return;
+  var pages=carMaxIdx()+1;
+  dots.innerHTML='';
+  for(var i=0;i<pages;i++){
+    var d=document.createElement('button');
+    d.className='car-dot'+(i===carIdx?' active':'');
+    d.setAttribute('data-i',i);
+    d.addEventListener('click',(function(idx){return function(){carGoTo(idx);};})(i));
+    dots.appendChild(d);
+  }
+}
+
+/* Drag/swipe support */
+function initCarDrag(){
+  var outer=document.getElementById('carouselOuter');
+  var grid=document.getElementById('catGrid');
+  if(!outer||!grid)return;
+  outer.addEventListener('mousedown',onDragStart);
+  outer.addEventListener('touchstart',onDragStart,{passive:true});
+  window.addEventListener('mousemove',onDragMove);
+  window.addEventListener('touchmove',onDragMove,{passive:false});
+  window.addEventListener('mouseup',onDragEnd);
+  window.addEventListener('touchend',onDragEnd);
+}
+
+function onDragStart(e){
+  isDragging=true;dragDeltaX=0;
+  dragStartX=e.touches?e.touches[0].clientX:e.clientX;
+}
+function onDragMove(e){
+  if(!isDragging)return;
+  var x=e.touches?e.touches[0].clientX:e.clientX;
+  dragDeltaX=x-dragStartX;
+  var outer=document.getElementById('carouselOuter');
+  var cardW=outer.offsetWidth/carPerPage;
+  var base=carIdx*cardW;
+  var grid=document.getElementById('catGrid');
+  if(grid){grid.style.transition='none';grid.style.transform='translateX('+(-(base-dragDeltaX))+'px)';}
+  if(e.touches&&Math.abs(dragDeltaX)>8)e.preventDefault();
+}
+function onDragEnd(){
+  if(!isDragging)return;
+  isDragging=false;
+  var outer=document.getElementById('carouselOuter');
+  var threshold=outer.offsetWidth*0.18;
+  if(dragDeltaX<-threshold)carMove(1);
+  else if(dragDeltaX>threshold)carMove(-1);
+  else updateCarPosition(true);
+  dragDeltaX=0;
+}
+
+/* resize re-layout */
+window.addEventListener('resize',function(){
+  var newPer=getCarPerPage();
+  if(newPer!==carPerPage){carPerPage=newPer;carIdx=Math.min(carIdx,carMaxIdx());buildDots();}
+  updateCarPosition(false);
+});
 
 function filterCat(tag,btn){
   activeFilter=tag;
@@ -738,6 +870,8 @@ document.getElementById('burger').addEventListener('click',function(){
 function closeMenu(){document.getElementById('navMobile').classList.remove('open');}
 
 /* ══ INIT ══ */
+var activeFilter='all';
+var tappedCard=null;
 renderCatalog('all');
 observeRv();
 </script>
