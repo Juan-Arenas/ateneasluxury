@@ -3,7 +3,70 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ATENEA'S LUXURY | Salas de Lujo — Dosquebradas</title>
+<title>ATENEA'S LUXURY | Muebles de Lujo en Dosquebradas — Salas, Alcobas, Sofás y Comedores</title>
+
+<!-- SEO Meta Description -->
+<meta name="description" content="Atenea's Luxury: muebles de lujo en Dosquebradas, Risaralda. Salas, alcobas, sofás, sofacamas y comedores de alta calidad. Diseño exclusivo, fabricación colombiana. Visítanos en Calle 16 #14-08 junto al Pereira Plaza. WhatsApp: 311 777 5923."/>
+<meta name="keywords" content="muebles de lujo Dosquebradas, salas de lujo Risaralda, alcobas lujo Colombia, sofás tapizados Pereira, comedores de lujo, muebles Ateneas Luxury, sofacamas, muebles a medida Colombia"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Atenea's Luxury"/>
+<meta name="geo.region" content="CO-RIS"/>
+<meta name="geo.placename" content="Dosquebradas, Risaralda, Colombia"/>
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Atenea's Luxury — Muebles de Lujo en Dosquebradas"/>
+<meta property="og:description" content="Maderas con el alma, muebles con historia. Salas, alcobas, sofás y comedores de lujo en Dosquebradas, Risaralda. Diseño exclusivo, fabricación local colombiana."/>
+<meta property="og:image" content="Logo.png"/>
+<meta property="og:url" content="https://ateneasluxury.com/"/>
+<meta property="og:locale" content="es_CO"/>
+<meta property="og:site_name" content="Atenea's Luxury"/>
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Atenea's Luxury — Muebles de Lujo en Dosquebradas"/>
+<meta name="twitter:description" content="Maderas con el alma, muebles con historia. Salas, alcobas, sofás y comedores de lujo en Dosquebradas, Risaralda."/>
+<meta name="twitter:image" content="Logo.png"/>
+
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" href="Logo.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="Logo.png"/>
+<link rel="icon" type="image/png" href="Logo.png"/>
+
+<!-- Canonical -->
+<link rel="canonical" href="https://ateneasluxury.com/"/>
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FurnitureStore",
+  "name": "Atenea's Luxury",
+  "description": "Tienda de muebles de lujo en Dosquebradas, Risaralda. Especialistas en salas, alcobas, sofás, sofacamas y comedores de alta calidad con diseño exclusivo y fabricación colombiana.",
+  "url": "https://ateneasluxury.com",
+  "logo": "Logo.png",
+  "image": "Logo.png",
+  "telephone": "+573117775923",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle 16 #14-08, Junto al Pereira Plaza",
+    "addressLocality": "Dosquebradas",
+    "addressRegion": "Risaralda",
+    "addressCountry": "CO"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 4.8211483,
+    "longitude": -75.6877724
+  },
+  "openingHours": "Mo-Sa 08:00-18:00",
+  "priceRange": "$$",
+  "sameAs": [
+    "https://wa.me/573117775923"
+  ]
+}
+</script>
+
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
@@ -33,12 +96,12 @@ tailwind.config = {
   ::-webkit-scrollbar-track{background:#0e0e0e}
   ::-webkit-scrollbar-thumb{background:#d4af37}
 
-  /* CATALOG GRID — uniform cards */
+  /* CATALOG GRID */
   .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   @media(max-width:1024px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:540px){.cat-grid{grid-template-columns:1fr}}
 
-  /* CATALOG CARD with animated gold border */
+  /* CATALOG CARD */
   .cat-card{
     position:relative;background:#1c1b1b;cursor:pointer;
     border:1px solid rgba(242,202,80,.08);
@@ -55,7 +118,6 @@ tailwind.config = {
   .cat-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 0 .5px rgba(242,202,80,.25)}
   .cat-card:hover::after{transform:scaleX(1)}
 
-  /* corner brackets */
   .bracket-tl,.bracket-br{
     position:absolute;z-index:3;pointer-events:none;
     width:26px;height:26px;opacity:.4;
@@ -65,23 +127,22 @@ tailwind.config = {
   .bracket-br{bottom:10px;right:10px;border-bottom:1.5px solid #f2ca50;border-right:1.5px solid #f2ca50}
   .cat-card:hover .bracket-tl,.cat-card:hover .bracket-br{width:42px;height:42px;opacity:1}
 
-  /* CARD IMAGE */
   .card-img-wrap{overflow:hidden;aspect-ratio:4/3;background:#1c1b1b;position:relative}
   .card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;
     transition:transform 1.4s cubic-bezier(.16,1,.3,1),filter .5s;
     filter:brightness(.82) saturate(.88)}
   .cat-card:hover .card-img-wrap img{transform:scale(1.07);filter:brightness(.97) saturate(1.05)}
 
-  /* PRICE OVERLAY */
-  .price-overlay{
+  /* DETAIL OVERLAY — no prices */
+  .detail-overlay{
     position:absolute;inset:0;
-    background:linear-gradient(to top,rgba(10,9,8,.95) 0%,rgba(10,9,8,.3) 55%,transparent 100%);
+    background:linear-gradient(to top,rgba(10,9,8,.9) 0%,rgba(10,9,8,.2) 55%,transparent 100%);
     padding:18px 16px 14px;opacity:0;transition:opacity .4s;
     display:flex;flex-direction:column;justify-content:flex-end;
   }
-  .cat-card:hover .price-overlay{opacity:1}
+  .cat-card:hover .detail-overlay{opacity:1}
   @media(max-width:640px){
-    .price-overlay{opacity:1;background:linear-gradient(to top,rgba(10,9,8,.9) 0%,transparent 60%)}
+    .detail-overlay{opacity:1;background:linear-gradient(to top,rgba(10,9,8,.85) 0%,transparent 60%)}
   }
 
   /* MOBILE MENU */
@@ -95,149 +156,444 @@ tailwind.config = {
   /* REVEAL */
   .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
   .rv.vis{opacity:1;transform:translateY(0)}
+
+  /* HERO LEMA */
+  .lema-text{
+    font-family:'Newsreader',serif;
+    font-size:clamp(1.5rem,4vw,2.8rem);
+    font-style:italic;
+    font-weight:300;
+    letter-spacing:0.02em;
+    line-height:1.3;
+    color:#e5e2e1;
+    position:relative;
+    display:inline-block;
+  }
+  .lema-text .lema-highlight{
+    color:#f2ca50;
+    font-weight:700;
+    font-style:normal;
+  }
+  .lema-divider{
+    display:inline-block;width:40px;height:1px;background:linear-gradient(90deg,transparent,#f2ca50,transparent);
+    vertical-align:middle;margin:0 14px;
+  }
+
+  /* SECTION TABS */
+  .sec-tab{
+    cursor:pointer;padding:10px 22px;
+    font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;
+    border:1px solid rgba(255,255,255,.1);color:#d0c5af;
+    transition:all .3s;background:transparent;
+  }
+  .sec-tab:hover,.sec-tab.active{
+    background:linear-gradient(135deg,#f2ca50,#d4af37);
+    color:#3c2f00;border-color:#f2ca50;font-weight:700;
+  }
+
+  /* CATALOG SECTION PANEL */
+  .cat-section{display:none}
+  .cat-section.active{display:block}
+
+  /* ═══ COLORS SECTION ═══ */
+  #colores-section{
+    position:relative;
+    background:#0a0900;
+    overflow:hidden;
+  }
+  /* Diagonal yellow light sweep loop */
+  #colores-section::before{
+    content:'';
+    position:absolute;
+    top:-100%;left:-60%;
+    width:60%;height:300%;
+    background:linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(242,202,80,0.0) 35%,
+      rgba(242,202,80,0.18) 48%,
+      rgba(255,215,0,0.35) 50%,
+      rgba(242,202,80,0.18) 52%,
+      rgba(242,202,80,0.0) 65%,
+      transparent 100%
+    );
+    transform:skewX(-15deg);
+    animation:diag-sweep 4s ease-in-out infinite;
+    pointer-events:none;
+    z-index:1;
+  }
+  @keyframes diag-sweep{
+    0%{left:-70%;opacity:0}
+    10%{opacity:1}
+    70%{opacity:1}
+    100%{left:120%;opacity:0}
+  }
+  /* Yellow glow border pulse */
+  #colores-section::after{
+    content:'';
+    position:absolute;inset:0;
+    border:2px solid transparent;
+    background:linear-gradient(#0a0900,#0a0900) padding-box,
+               linear-gradient(135deg,#f2ca50,#d4af37,#f2ca50,#d4af37) border-box;
+    animation:border-glow 3s ease-in-out infinite alternate;
+    pointer-events:none;
+    z-index:1;
+  }
+  @keyframes border-glow{
+    0%{opacity:.3}
+    100%{opacity:1}
+  }
+  .colores-inner{position:relative;z-index:2}
+
+  .color-card{
+    position:relative;overflow:hidden;cursor:pointer;
+    border:1px solid rgba(242,202,80,.15);
+    transition:transform .4s,box-shadow .4s;
+    background:#111;
+    aspect-ratio:1/1;
+  }
+  .color-card:hover{
+    transform:translateY(-4px) scale(1.03);
+    box-shadow:0 0 30px rgba(242,202,80,.4),0 10px 40px rgba(0,0,0,.6);
+    border-color:rgba(242,202,80,.7);
+  }
+  .color-card img{width:100%;height:100%;object-fit:cover;display:block;transition:filter .4s}
+  .color-card:hover img{filter:brightness(1.1) saturate(1.2)}
+
+  /* color grid */
+  .color-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  @media(max-width:900px){.color-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:540px){.color-grid{grid-template-columns:repeat(2,1fr)}}
+
+  /* Estand spotlight card */
+  .estand-card{
+    position:relative;overflow:hidden;
+    border:2px solid #f2ca50;
+    box-shadow:0 0 40px rgba(242,202,80,.25),0 0 80px rgba(242,202,80,.1);
+  }
+
+  /* SOCIAL SHARE BAR */
+  .share-bar a{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 20px;font-size:0.65rem;letter-spacing:.18em;text-transform:uppercase;
+    border:1px solid rgba(255,255,255,.12);color:#d0c5af;
+    transition:all .3s;text-decoration:none;
+  }
+  .share-bar a:hover{border-color:#f2ca50;color:#f2ca50;background:rgba(242,202,80,.05)}
+
+  /* WHATSAPP FLOAT */
+  .wa-float{
+    position:fixed;bottom:28px;right:28px;z-index:300;
+    width:58px;height:58px;border-radius:50%;
+    background:linear-gradient(135deg,#25d366,#128c7e);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 30px rgba(37,211,102,.45);
+    transition:transform .3s,box-shadow .3s;
+    animation:wa-pulse 2.5s ease-in-out infinite;
+  }
+  .wa-float:hover{transform:scale(1.12);box-shadow:0 10px 40px rgba(37,211,102,.6)}
+  @keyframes wa-pulse{
+    0%,100%{box-shadow:0 6px 30px rgba(37,211,102,.45)}
+    50%{box-shadow:0 6px 50px rgba(37,211,102,.75),0 0 0 8px rgba(37,211,102,.1)}
+  }
 </style>
 </head>
 <body class="bg-background text-on-surface font-body overflow-x-hidden selection:bg-primary-container selection:text-on-primary">
 
 <!-- ══ NAV ══ -->
-<nav class="fixed top-0 w-full z-50 bg-neutral-900/40 backdrop-blur-xl border-b border-white/5 flex justify-between items-center px-7 md:px-12 py-5">
-  <a href="#" class="flex flex-col leading-none">
-    <span class="font-headline text-xl md:text-2xl tracking-[0.18em] uppercase text-primary">Atenea's Luxury</span>
-    <span class="text-[0.5rem] tracking-[0.3em] uppercase text-on-surface-variant opacity-55 mt-0.5">Salas &amp; Sofás · Dosquebradas</span>
+<nav class="fixed top-0 w-full z-50 bg-neutral-900/40 backdrop-blur-xl border-b border-white/5 flex justify-between items-center px-7 md:px-12 py-4" aria-label="Navegación principal">
+  <a href="#" class="flex items-center gap-3 leading-none" aria-label="Atenea's Luxury - Inicio">
+    <img src="Logo.png" alt="Logotipo Atenea's Luxury muebles de lujo Dosquebradas" class="h-9 w-auto object-contain"/>
+    <div class="flex flex-col">
+      <span class="font-headline text-xl md:text-2xl tracking-[0.18em] uppercase text-primary">Atenea's Luxury</span>
+      <span class="text-[0.5rem] tracking-[0.3em] uppercase text-on-surface-variant opacity-55 mt-0.5">Muebles de Lujo · Dosquebradas</span>
+    </div>
   </a>
   <div class="hidden md:flex items-center gap-8 text-[0.65rem] tracking-[0.18em] uppercase text-on-surface">
     <a class="hover:text-primary transition-colors duration-300" href="#nosotros">Nosotros</a>
     <a class="hover:text-primary transition-colors duration-300" href="#catalogo">Catálogo</a>
+    <a class="hover:text-primary transition-colors duration-300" href="#colores">Colores</a>
     <a class="hover:text-primary transition-colors duration-300" href="#pago">Pagos</a>
     <a class="hover:text-primary transition-colors duration-300" href="#ubicacion">Ubicación</a>
     <a class="border border-primary/40 px-5 py-2 text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300" href="#ubicacion">Contáctanos</a>
   </div>
-  <button id="burger" class="md:hidden flex flex-col gap-[5px] p-1">
+  <button id="burger" class="md:hidden flex flex-col gap-[5px] p-1" aria-label="Abrir menú">
     <span class="block w-6 h-px bg-primary"></span>
     <span class="block w-6 h-px bg-primary"></span>
     <span class="block w-6 h-px bg-primary"></span>
   </button>
 </nav>
 
-<div class="mob-menu" id="mobMenu">
-  <button id="mobClose" class="absolute top-7 right-8 text-primary text-3xl font-light">✕</button>
+<div class="mob-menu" id="mobMenu" role="dialog" aria-modal="true" aria-label="Menú móvil">
+  <button id="mobClose" class="absolute top-7 right-8 text-primary text-3xl font-light" aria-label="Cerrar menú">✕</button>
   <a onclick="closeMob()" href="#nosotros"  class="font-headline text-4xl italic text-on-surface hover:text-primary transition-colors">Nosotros</a>
   <a onclick="closeMob()" href="#catalogo" class="font-headline text-4xl italic text-on-surface hover:text-primary transition-colors">Catálogo</a>
+  <a onclick="closeMob()" href="#colores"  class="font-headline text-4xl italic text-on-surface hover:text-primary transition-colors">Colores</a>
   <a onclick="closeMob()" href="#pago"     class="font-headline text-4xl italic text-on-surface hover:text-primary transition-colors">Pagos</a>
   <a onclick="closeMob()" href="#ubicacion" class="font-headline text-4xl italic text-primary">Ubicación</a>
 </div>
 
 <!-- ══ HERO ══ -->
-<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<section class="relative h-screen flex items-center justify-center overflow-hidden" aria-label="Portada principal">
   <div class="absolute inset-0 z-0">
-    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-background z-10"></div>
-    <img class="w-full h-full object-cover opacity-55 scale-105"
-         src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&q=85"
-         alt="Sala de lujo Atenea's"/>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-background z-10"></div>
+    <img class="w-full h-full object-cover opacity-50 scale-105"
+         src="Sala_1.jpeg"
+         alt="Sala de lujo Atenea's Luxury — muebles tapizados premium en Dosquebradas Risaralda"/>
   </div>
+
   <div class="relative z-20 text-center px-6 max-w-5xl mx-auto">
     <span class="text-[0.65rem] tracking-[0.42em] uppercase text-primary opacity-80 block mb-7">Colección 2026 — Dosquebradas, Colombia</span>
-    <h1 class="font-headline text-[clamp(3.2rem,10vw,7rem)] leading-[0.88] tracking-tight mb-8 italic">
+
+    <!-- Logotipo grande -->
+    <div class="flex justify-center mb-6">
+      <img src="Logo.png" alt="Atenea's Luxury logo muebles de lujo" class="h-20 md:h-28 w-auto object-contain drop-shadow-2xl"/>
+    </div>
+
+    <h1 class="font-headline text-[clamp(3rem,9vw,6rem)] leading-[0.88] tracking-tight mb-6 italic">
       Atenea's<span class="text-primary block not-italic font-bold">Luxury</span>
     </h1>
-    <div class="flex justify-center gap-6 items-center mb-10">
-      <div class="h-px w-20 bg-primary/40 hidden md:block"></div>
-      <p class="text-base md:text-lg font-light max-w-lg text-on-surface-variant leading-relaxed">
-        Salas de lujo diseñadas para quienes entienden que el hogar comienza en la sala.
-      </p>
-      <div class="h-px w-20 bg-primary/40 hidden md:block"></div>
+
+    <!-- LEMA destacado -->
+    <div class="relative my-8 flex flex-col items-center gap-3">
+      <!-- línea decorativa superior -->
+      <div class="flex items-center gap-5 w-full max-w-2xl justify-center">
+        <div class="h-px flex-1 bg-gradient-to-r from-transparent to-primary/50"></div>
+        <span class="text-primary text-xs tracking-[0.5em] uppercase opacity-60">Lema</span>
+        <div class="h-px flex-1 bg-gradient-to-l from-transparent to-primary/50"></div>
+      </div>
+
+      <div class="glass-panel px-8 py-5 max-w-2xl w-full" style="border-color:rgba(242,202,80,.35);box-shadow:0 0 60px rgba(242,202,80,.12),inset 0 0 40px rgba(242,202,80,.04)">
+        <p class="lema-text text-center">
+          <span class="lema-highlight">Maderas con el alma</span>
+          <span class="lema-divider" aria-hidden="true"></span>
+          <span>muebles con historia</span>
+        </p>
+        <!-- partícula dorada decorativa -->
+        <div class="flex justify-center gap-2 mt-3 opacity-50">
+          <span class="text-primary text-xs">✦</span>
+          <span class="text-primary text-xs">✦</span>
+          <span class="text-primary text-xs">✦</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-5 w-full max-w-2xl justify-center">
+        <div class="h-px flex-1 bg-gradient-to-r from-transparent to-primary/30"></div>
+        <div class="h-px flex-1 bg-gradient-to-l from-transparent to-primary/30"></div>
+      </div>
     </div>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#catalogo" class="champagne-gradient px-10 py-4 text-on-primary font-bold uppercase tracking-[0.2em] text-xs hover:tracking-[0.28em] transition-all duration-700 inline-block text-center">Explorar Catálogo</a>
-      <a href="#ubicacion" class="border border-primary/30 px-10 py-4 text-xs uppercase tracking-widest hover:bg-primary/10 hover:border-primary transition-colors inline-block text-center">Visítanos</a>
-    </div>
-  </div>
-  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[0.52rem] tracking-[0.3em] uppercase text-on-surface-variant opacity-40 animate-bounce">
-    <svg width="13" height="21" viewBox="0 0 13 21" fill="none"><rect x=".5" y=".5" width="12" height="20" rx="6" stroke="currentColor"/><rect x="5" y="4" width="3" height="5" rx="1.5" fill="currentColor"/></svg>
-    Scroll
+
   </div>
 </section>
 
 <!-- ══ MARQUEE ══ -->
-<div class="bg-primary py-3 overflow-hidden">
+<div class="bg-primary py-3 overflow-hidden" aria-hidden="true">
   <div class="marquee-track" id="mTrack"></div>
 </div>
 
 <!-- ══ FEATURES ══ -->
-<section class="py-28 px-6 md:px-12 bg-surface-container-lowest" id="nosotros">
+<section class="py-28 px-6 md:px-12 bg-surface-container-lowest" id="nosotros" aria-label="Sobre Atenea's Luxury">
   <div class="max-w-screen-xl mx-auto">
     <div class="mb-20 rv">
       <span class="text-primary text-[0.65rem] tracking-[0.4em] uppercase block mb-4">Nuestra Esencia</span>
       <h2 class="font-headline text-5xl md:text-7xl italic tracking-tight">Arte en cada <span class="text-primary not-italic font-bold">detalle</span></h2>
     </div>
+
+    <div class="mb-16 rv max-w-3xl">
+      <p class="text-on-surface-variant text-base leading-relaxed mb-5">
+        En <strong class="text-on-surface">Atenea's Luxury</strong> creemos que cada mueble lleva el alma del artesano que lo creó. Somos una empresa colombiana ubicada en <strong class="text-on-surface">Dosquebradas, Risaralda</strong>, especializada en salas de lujo, alcobas, sofás, sofacamas y comedores de alta calidad.
+      </p>
+      <p class="text-on-surface-variant text-base leading-relaxed mb-5">
+        Nuestro lema <em class="text-primary">"Maderas con el alma, muebles con historia"</em> resume lo que hacemos: piezas de mobiliario que no solo adornan espacios, sino que cuentan historias, generan memorias y transforman hogares en lugares únicos llenos de elegancia y calidez.
+      </p>
+      <p class="text-on-surface-variant text-base leading-relaxed mb-5">
+        Trabajamos con artesanos colombianos de décadas de experiencia. Cada sala, cada alcoba y cada sofá es fabricado con materiales premium y tapizados de alta resistencia seleccionados con rigor. Desde salas clásicas de lujo hasta alcobas minimalistas modernas, nuestro catálogo ofrece más de 100 referencias únicas para satisfacer todos los gustos y estilos de vida.
+      </p>
+      <p class="text-on-surface-variant text-base leading-relaxed mb-5">
+        Atendemos clientes de toda la <strong class="text-on-surface">región cafetera</strong> — Pereira, Manizales, Armenia, Medellín y más allá — con envío a nivel nacional. Visita nuestro showroom en <strong class="text-on-surface">Calle 16 #14-08, junto al Pereira Plaza</strong> y vive la experiencia de tocar, sentir y enamorarte de tu mueble perfecto antes de decidir.
+      </p>
+      <p class="text-on-surface-variant text-base leading-relaxed">
+        Contamos con sistema de pago flexible, planes de separado y financiación adaptada a tu comodidad. Tu hogar merece lo mejor — y en Atenea's Luxury, lo mejor es lo que hacemos cada día.
+      </p>
+    </div>
+
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="glass-panel p-8 group hover:-translate-y-2 transition-transform duration-500 rv" style="transition-delay:.05s">
         <div class="w-11 h-11 mb-6 flex items-center justify-center border border-primary/30 text-primary group-hover:bg-primary/10 transition-colors">
-          <svg width="26" height="26" viewBox="0 0 48 48" fill="none"><path d="M7 34V22Q7 18 11 18H37Q41 18 41 22V34" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="34" width="42" height="5" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M12 18V13Q12 10 15 10H33Q36 10 36 13V18" stroke="currentColor" stroke-width="1.3"/><line x1="10" y1="39" x2="10" y2="44" stroke="currentColor" stroke-width="1.5"/><line x1="38" y1="39" x2="38" y2="44" stroke="currentColor" stroke-width="1.5"/></svg>
+          <svg width="26" height="26" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M7 34V22Q7 18 11 18H37Q41 18 41 22V34" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="34" width="42" height="5" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M12 18V13Q12 10 15 10H33Q36 10 36 13V18" stroke="currentColor" stroke-width="1.3"/><line x1="10" y1="39" x2="10" y2="44" stroke="currentColor" stroke-width="1.5"/><line x1="38" y1="39" x2="38" y2="44" stroke="currentColor" stroke-width="1.5"/></svg>
         </div>
         <h3 class="font-headline text-xl mb-3">Diseño Exclusivo</h3>
-        <p class="text-sm text-on-surface-variant leading-relaxed">Piezas concebidas con visión estética única, fusionando tendencias internacionales con el gusto colombiano más refinado.</p>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Piezas concebidas con visión estética única, fusionando tendencias internacionales con el gusto colombiano más refinado. Salas, alcobas y comedores que reflejan tu personalidad.</p>
       </div>
       <div class="glass-panel p-8 group hover:-translate-y-2 transition-transform duration-500 rv" style="transition-delay:.1s">
         <div class="w-11 h-11 mb-6 flex items-center justify-center border border-primary/30 text-primary group-hover:bg-primary/10 transition-colors">
-          <svg width="26" height="26" viewBox="0 0 48 48" fill="none"><path d="M24 7L28.5 20H42L31.5 28L35.5 42L24 34L12.5 42L16.5 28L6 20H19.5Z" stroke="currentColor" stroke-width="1.5"/></svg>
+          <svg width="26" height="26" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 7L28.5 20H42L31.5 28L35.5 42L24 34L12.5 42L16.5 28L6 20H19.5Z" stroke="currentColor" stroke-width="1.5"/></svg>
         </div>
         <h3 class="font-headline text-xl mb-3">Alta Calidad</h3>
-        <p class="text-sm text-on-surface-variant leading-relaxed">Materiales premium seleccionados con rigor. Tapizados de alta resistencia con acabados que perduran décadas en su hogar.</p>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Materiales premium seleccionados con rigor. Tapizados de alta resistencia con acabados que perduran décadas en su hogar. Maderas nobles y espumas de alta densidad.</p>
       </div>
       <div class="glass-panel p-8 group hover:-translate-y-2 transition-transform duration-500 rv" style="transition-delay:.15s">
         <div class="w-11 h-11 mb-6 flex items-center justify-center border border-primary/30 text-primary group-hover:bg-primary/10 transition-colors">
-          <svg width="26" height="26" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="1.5"/><path d="M24 13V24L32 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg width="26" height="26" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="1.5"/><path d="M24 13V24L32 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
         <h3 class="font-headline text-xl mb-3">Fabricación Local</h3>
-        <p class="text-sm text-on-surface-variant leading-relaxed">Artesanos colombianos con décadas de experiencia. Atención personalizada y tiempos de entrega cumplidos.</p>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Artesanos colombianos con décadas de experiencia en tapicería y ebanistería fina. Atención personalizada y tiempos de entrega cumplidos con compromiso.</p>
       </div>
       <div class="glass-panel p-8 group hover:-translate-y-2 transition-transform duration-500 rv" style="transition-delay:.2s">
         <div class="w-11 h-11 mb-6 flex items-center justify-center border border-primary/30 text-primary group-hover:bg-primary/10 transition-colors">
-          <svg width="26" height="26" viewBox="0 0 48 48" fill="none"><path d="M8 39V18L24 8L40 18V39Z" stroke="currentColor" stroke-width="1.5"/><rect x="18" y="27" width="12" height="12" stroke="currentColor" stroke-width="1.3"/></svg>
+          <svg width="26" height="26" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 39V18L24 8L40 18V39Z" stroke="currentColor" stroke-width="1.5"/><rect x="18" y="27" width="12" height="12" stroke="currentColor" stroke-width="1.3"/></svg>
         </div>
-        <h3 class="font-headline text-xl mb-3">Showroom Físico</h3>
-        <p class="text-sm text-on-surface-variant leading-relaxed">Nuestra sala de exposición en Dosquebradas. Toca, siente y enamórate de tu sala perfecta antes de decidir.</p>
+        <h3 class="font-headline text-xl mb-3">Showroom en Dosquebradas</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Nuestro showroom físico en Dosquebradas, Risaralda, junto al Pereira Plaza. Toca, siente y enamórate de tu mueble perfecto antes de decidir.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ══ STATS ══ -->
+<section class="py-20 bg-surface-container-high relative overflow-hidden" aria-label="Estadísticas">
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" aria-hidden="true"></div>
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" aria-hidden="true"></div>
+  <div class="max-w-screen-xl mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div class="group rv"><div class="font-headline text-6xl md:text-7xl font-bold text-primary mb-3 tracking-tighter group-hover:scale-110 transition-transform">100+</div><div class="text-[0.65rem] uppercase tracking-[0.3em] text-on-surface-variant">Referencias</div></div>
+    <div class="group rv" style="transition-delay:.08s"><div class="font-headline text-6xl md:text-7xl font-bold text-primary mb-3 tracking-tighter group-hover:scale-110 transition-transform">500+</div><div class="text-[0.65rem] uppercase tracking-[0.3em] text-on-surface-variant">Clientes Felices</div></div>
+    <div class="group rv" style="transition-delay:.16s"><div class="font-headline text-6xl md:text-7xl font-bold text-primary mb-3 tracking-tighter group-hover:scale-110 transition-transform">5★</div><div class="text-[0.65rem] uppercase tracking-[0.3em] text-on-surface-variant">Calificación</div></div>
+    <div class="group rv" style="transition-delay:.24s"><div class="font-headline text-6xl md:text-7xl font-bold text-primary mb-3 tracking-tighter group-hover:scale-110 transition-transform">3</div><div class="text-[0.65rem] uppercase tracking-[0.3em] text-on-surface-variant">Métodos de Pago</div></div>
+  </div>
+</section>
+
 <!-- ══ CATALOG ══ -->
-<section class="py-28 bg-surface" id="catalogo">
+<section class="py-28 bg-surface" id="catalogo" aria-label="Catálogo de muebles de lujo">
   <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
     <div class="flex flex-col md:flex-row justify-between items-end mb-14 gap-6 rv">
       <div>
         <span class="text-primary text-[0.65rem] tracking-[0.4em] uppercase block mb-4">Colección 2026</span>
         <h2 class="font-headline text-5xl md:text-7xl italic tracking-tight">Nuestro <span class="text-primary not-italic font-bold">Catálogo</span></h2>
       </div>
-      <span class="font-headline text-3xl italic text-primary/50 hidden md:block">58 Referencias</span>
+      <span class="font-headline text-3xl italic text-primary/50 hidden md:block">Colección Completa</span>
     </div>
-    <!-- Filter tabs -->
-    <div class="flex gap-2 flex-wrap mb-10 rv">
-      <button onclick="filterCat('all',this)" class="ftab is-active px-6 py-2.5 text-[0.58rem] tracking-[0.2em] uppercase border border-primary bg-primary text-on-primary transition-all duration-300">Todos</button>
-      <button onclick="filterCat('sofa',this)" class="ftab px-6 py-2.5 text-[0.58rem] tracking-[0.2em] uppercase border border-white/10 text-on-surface-variant transition-all duration-300 hover:border-primary hover:text-primary">Sofás</button>
-      <button onclick="filterCat('sectional',this)" class="ftab px-6 py-2.5 text-[0.58rem] tracking-[0.2em] uppercase border border-white/10 text-on-surface-variant transition-all duration-300 hover:border-primary hover:text-primary">Seccionales</button>
-      <button onclick="filterCat('silla',this)" class="ftab px-6 py-2.5 text-[0.58rem] tracking-[0.2em] uppercase border border-white/10 text-on-surface-variant transition-all duration-300 hover:border-primary hover:text-primary">Sillas &amp; Sillones</button>
+
+    <!-- SECTION TABS -->
+    <div class="flex gap-2 flex-wrap mb-10 rv" role="tablist" aria-label="Categorías del catálogo">
+      <button class="sec-tab active" onclick="showSection('salas',this)" role="tab" aria-selected="true" aria-controls="sec-salas">Salas</button>
+      <button class="sec-tab" onclick="showSection('alcobaslujo',this)" role="tab" aria-selected="false" aria-controls="sec-alcobaslujo">Alcobas de Lujo</button>
+      <button class="sec-tab" onclick="showSection('alcobasmin',this)" role="tab" aria-selected="false" aria-controls="sec-alcobasmin">Alcobas Minimalistas</button>
+      <button class="sec-tab" onclick="showSection('sofas',this)" role="tab" aria-selected="false" aria-controls="sec-sofas">Sofás y Sofacamas</button>
+      <button class="sec-tab" onclick="showSection('comedores',this)" role="tab" aria-selected="false" aria-controls="sec-comedores">Comedores</button>
     </div>
   </div>
 
-  <!-- Grid (full-bleed inside padding) -->
-  <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
-    <div class="cat-grid" id="catGrid"></div>
+  <!-- ── SALAS ── -->
+  <div id="sec-salas" class="cat-section active max-w-screen-2xl mx-auto px-6 md:px-12" role="tabpanel" aria-labelledby="tab-salas">
+    <div class="cat-grid" id="grid-salas"></div>
+  </div>
+
+  <!-- ── ALCOBAS DE LUJO ── -->
+  <div id="sec-alcobaslujo" class="cat-section max-w-screen-2xl mx-auto px-6 md:px-12" role="tabpanel" aria-labelledby="tab-alcobaslujo">
+    <div class="cat-grid" id="grid-alcobaslujo"></div>
+  </div>
+
+  <!-- ── ALCOBAS MINIMALISTAS ── -->
+  <div id="sec-alcobasmin" class="cat-section max-w-screen-2xl mx-auto px-6 md:px-12" role="tabpanel" aria-labelledby="tab-alcobasmin">
+    <div class="cat-grid" id="grid-alcobasmin"></div>
+  </div>
+
+  <!-- ── SOFÁS Y SOFACAMAS ── -->
+  <div id="sec-sofas" class="cat-section max-w-screen-2xl mx-auto px-6 md:px-12" role="tabpanel" aria-labelledby="tab-sofas">
+    <div class="cat-grid" id="grid-sofas"></div>
+  </div>
+
+  <!-- ── COMEDORES ── -->
+  <div id="sec-comedores" class="cat-section max-w-screen-2xl mx-auto px-6 md:px-12" role="tabpanel" aria-labelledby="tab-comedores">
+    <div class="cat-grid" id="grid-comedores"></div>
+  </div>
+</section>
+
+<!-- ══ COLORES ══ -->
+<section id="colores" id="colores-section" aria-label="Catálogo de colores y telas disponibles" style="position:relative;background:#0a0900;overflow:hidden;padding:80px 0">
+
+  <!-- Diagonal sweep overlay -->
+  <div id="colorSweep" style="
+    position:absolute;top:-100%;left:-70%;
+    width:55%;height:300%;
+    background:linear-gradient(90deg,transparent 0%,rgba(242,202,80,0) 35%,rgba(242,202,80,0.18) 48%,rgba(255,215,0,0.38) 50%,rgba(242,202,80,0.18) 52%,rgba(242,202,80,0) 65%,transparent 100%);
+    transform:skewX(-15deg);
+    pointer-events:none;z-index:1;
+    animation:diagSweep 4s ease-in-out infinite;
+  " aria-hidden="true"></div>
+
+  <!-- Glow border -->
+  <div style="
+    position:absolute;inset:0;
+    border:2px solid rgba(242,202,80,0.6);
+    pointer-events:none;z-index:1;
+    animation:borderPulse 3s ease-in-out infinite alternate;
+  " aria-hidden="true"></div>
+
+  <style>
+    @keyframes diagSweep{0%{left:-70%;opacity:0}8%{opacity:1}80%{opacity:1}100%{left:120%;opacity:0}}
+    @keyframes borderPulse{0%{opacity:.2;box-shadow:inset 0 0 40px rgba(242,202,80,.05)}100%{opacity:.9;box-shadow:inset 0 0 80px rgba(242,202,80,.15),0 0 60px rgba(242,202,80,.2)}}
+  </style>
+
+  <div class="max-w-screen-2xl mx-auto px-6 md:px-12" style="position:relative;z-index:2">
+
+    <!-- Header -->
+    <div class="text-center mb-16 rv">
+      <span class="text-primary text-[0.65rem] tracking-[0.4em] uppercase block mb-4">Personaliza tu Mueble</span>
+      <h2 class="font-headline text-5xl md:text-7xl italic tracking-tight mb-4">
+        Nuestros <span class="text-primary not-italic font-bold">Colores</span>
+      </h2>
+      <p class="text-on-surface-variant max-w-xl mx-auto text-base leading-relaxed">
+        Elige entre nuestra amplia paleta de telas y tapizados premium. Cada color y textura ha sido seleccionado para ofrecerte la combinación perfecta de elegancia, durabilidad y estilo en tu hogar.
+      </p>
+      <!-- Líneas doradas decorativas -->
+      <div class="flex items-center justify-center gap-4 mt-6">
+        <div class="h-px w-24 bg-gradient-to-r from-transparent to-primary/60"></div>
+        <span class="text-primary text-lg">✦</span>
+        <div class="h-px w-24 bg-gradient-to-l from-transparent to-primary/60"></div>
+      </div>
+    </div>
+
+    <!-- Estand foto completa -->
+    <div class="mb-10 rv">
+      <p class="text-primary text-[0.62rem] tracking-[0.3em] uppercase mb-4 text-center">Exhibición Completa de Colores</p>
+      <div class="estand-card max-w-4xl mx-auto" style="aspect-ratio:16/9">
+        <img src="Sección_de_Colores.jpeg"
+             alt="Exhibición completa del estand de colores y telas disponibles en Atenea's Luxury Dosquebradas — todos los tapizados premium"
+             style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:20px 24px;background:linear-gradient(to top,rgba(10,9,8,.9),transparent)">
+          <p class="font-headline text-xl italic text-primary">Estand de Colores — Visítanos para verlos en persona</p>
+          <p class="text-on-surface-variant text-sm mt-1">Calle 16 #14-08, junto al Pereira Plaza · Dosquebradas</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid de colores -->
+    <div class="color-grid rv" id="colorGrid"></div>
+
+    <!-- CTA -->
+    <div class="text-center mt-14 rv">
+      <p class="text-on-surface-variant mb-6 text-base">¿No encuentras el color que buscas? Contáctanos y buscamos la tela perfecta para ti.</p>
+      <a href="https://wa.me/573117775923?text=Hola!%20Me%20interesan%20los%20colores%20y%20telas%20disponibles%20para%20mis%20muebles%20%F0%9F%8C%9F"
+         target="_blank" rel="noopener"
+         class="champagne-gradient px-10 py-4 text-on-primary font-bold uppercase tracking-[0.2em] text-xs inline-flex items-center gap-3 hover:opacity-90 transition-opacity">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.858L.057 23.5l5.7-1.497A11.93 11.93 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 0 1-4.964-1.347l-.356-.212-3.684.966.983-3.596-.232-.37A9.79 9.79 0 0 1 2.182 12c0-5.422 4.396-9.818 9.818-9.818 5.422 0 9.818 4.396 9.818 9.818 0 5.422-4.396 9.818-9.818 9.818z"/></svg>
+        Consultar por WhatsApp
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- ══ ABOUT ══ -->
-<section class="py-28 bg-surface-container-lowest overflow-hidden relative">
+<section class="py-28 bg-surface-container-lowest overflow-hidden relative" aria-label="Historia de Atenea's Luxury">
   <div class="max-w-screen-2xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 items-center gap-20">
     <div class="relative rv">
-      <div class="absolute -top-10 -left-10 w-56 h-56 bg-primary/5 rounded-full blur-[80px] pointer-events-none"></div>
+      <div class="absolute -top-10 -left-10 w-56 h-56 bg-primary/5 rounded-full blur-[80px] pointer-events-none" aria-hidden="true"></div>
       <img class="relative z-10 w-full aspect-[4/5] object-cover"
-           src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
-           alt="Showroom Atenea's Luxury"/>
+           src="Sala_5.jpeg"
+           alt="Sala de lujo en showroom Atenea's Luxury Dosquebradas — muebles tapizados premium con diseño exclusivo"/>
       <div class="absolute -bottom-8 -right-8 glass-panel p-7 z-20 max-w-xs hidden md:block">
-        <p class="font-headline text-lg italic">"Cada sala es un espacio de vida, no solo un mueble."</p>
+        <p class="font-headline text-lg italic">"Maderas con el alma, muebles con historia."</p>
         <p class="mt-3 text-[0.65rem] uppercase tracking-widest text-primary">— Atenea's Luxury</p>
       </div>
     </div>
@@ -245,15 +601,15 @@ tailwind.config = {
       <span class="text-primary uppercase tracking-[0.45em] text-[0.65rem] block">Nuestra Historia</span>
       <h2 class="font-headline text-5xl md:text-7xl leading-tight italic">Hecho en <span class="text-primary not-italic font-bold">Colombia</span></h2>
       <p class="text-on-surface-variant text-base leading-relaxed max-w-lg">
-        En Atenea's Luxury creemos que el hogar comienza en la sala. Nacimos del amor por el diseño de interiores y la convicción de que el lujo no es exclusivo — es una elección inteligente.
+        En Atenea's Luxury creemos que el hogar comienza en los muebles que lo habitan. Nacimos del amor por el diseño de interiores y la convicción de que el lujo no es exclusivo — es una elección inteligente y consciente.
       </p>
       <p class="text-on-surface-variant text-base leading-relaxed max-w-lg">
-        Ubicados en Dosquebradas, Risaralda, atendemos clientes de toda la región cafetera y más allá, con envío a nivel nacional.
+        Ubicados en Dosquebradas, Risaralda, junto al Pereira Plaza, atendemos clientes de toda la región cafetera y más allá, con envío y distribución a nivel nacional. Cada pieza que fabricamos lleva el alma de maestros tapizadores y ebanistas colombianos.
       </p>
       <div class="grid grid-cols-2 gap-8 pt-6 border-t border-white/5">
         <div>
-          <span class="block font-headline text-5xl text-primary mb-1">58+</span>
-          <span class="text-[0.65rem] uppercase tracking-widest text-on-surface-variant">Referencias</span>
+          <span class="block font-headline text-5xl text-primary mb-1">100+</span>
+          <span class="text-[0.65rem] uppercase tracking-widest text-on-surface-variant">Referencias únicas</span>
         </div>
         <div>
           <span class="block font-headline text-5xl text-primary mb-1">500+</span>
@@ -264,20 +620,8 @@ tailwind.config = {
   </div>
 </section>
 
-<!-- ══ STATS ══ -->
-<section class="py-20 bg-surface-container-high relative overflow-hidden">
-  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
-  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
-  <div class="max-w-screen-xl mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-    <div class="group rv"><div class="font-headline text-6xl md:text-7xl font-bold text-primary mb-3 tracking-tighter group-hover:scale-110 transition-transform">58+</div><div class="text-[0.65rem] uppercase tracking-[0.3em] text-on-surface-variant">Referencias</div></div>
-    <div class="group rv" style="transition-delay:.08s"><div class="font-headline text-6xl md:text-7xl font-bold text-primary mb-3 tracking-tighter group-hover:scale-110 transition-transform">500+</div><div class="text-[0.65rem] uppercase tracking-[0.3em] text-on-surface-variant">Clientes Felices</div></div>
-    <div class="group rv" style="transition-delay:.16s"><div class="font-headline text-6xl md:text-7xl font-bold text-primary mb-3 tracking-tighter group-hover:scale-110 transition-transform">5★</div><div class="text-[0.65rem] uppercase tracking-[0.3em] text-on-surface-variant">Calificación</div></div>
-    <div class="group rv" style="transition-delay:.24s"><div class="font-headline text-6xl md:text-7xl font-bold text-primary mb-3 tracking-tighter group-hover:scale-110 transition-transform">3</div><div class="text-[0.65rem] uppercase tracking-[0.3em] text-on-surface-variant">Métodos de Pago</div></div>
-  </div>
-</section>
-
 <!-- ══ PAYMENT ══ -->
-<section class="py-28 bg-surface-container-lowest" id="pago">
+<section class="py-28 bg-surface-container-lowest" id="pago" aria-label="Métodos de pago">
   <div class="max-w-screen-xl mx-auto px-6 md:px-12">
     <div class="text-center mb-20 rv">
       <span class="text-primary text-[0.65rem] tracking-[0.4em] uppercase block mb-4">Facilidades</span>
@@ -286,26 +630,26 @@ tailwind.config = {
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div class="glass-panel p-10 flex flex-col items-center text-center group hover:-translate-y-4 transition-transform duration-700 rv">
         <div class="w-16 h-16 rounded-full champagne-gradient flex items-center justify-center mb-8 shadow-xl shadow-primary/20">
-          <svg width="28" height="28" viewBox="0 0 46 46" fill="none"><rect x="4" y="10" width="38" height="26" rx="3" stroke="#3c2f00" stroke-width="1.5"/><line x1="4" y1="18" x2="42" y2="18" stroke="#3c2f00" stroke-width="1.5"/><rect x="8" y="23" width="10" height="4" rx="1" stroke="#3c2f00" stroke-width="1.2"/></svg>
+          <svg width="28" height="28" viewBox="0 0 46 46" fill="none" aria-hidden="true"><rect x="4" y="10" width="38" height="26" rx="3" stroke="#3c2f00" stroke-width="1.5"/><line x1="4" y1="18" x2="42" y2="18" stroke="#3c2f00" stroke-width="1.5"/><rect x="8" y="23" width="10" height="4" rx="1" stroke="#3c2f00" stroke-width="1.2"/></svg>
         </div>
         <h3 class="font-headline text-2xl mb-4">Tarjetas Débito y Crédito</h3>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-6">Todas las tarjetas de los principales bancos colombianos. Cuotas sin interés disponibles.</p>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-6">Todas las tarjetas de los principales bancos colombianos. Cuotas sin interés disponibles según tu banco.</p>
         <span class="text-xs tracking-widest text-primary font-bold uppercase">Disponible</span>
       </div>
       <div class="glass-panel p-10 flex flex-col items-center text-center group hover:-translate-y-4 transition-transform duration-700 rv" style="transition-delay:.1s">
         <div class="w-16 h-16 rounded-full champagne-gradient flex items-center justify-center mb-8 shadow-xl shadow-primary/20">
-          <svg width="28" height="28" viewBox="0 0 46 46" fill="none"><path d="M8 14L23 8L38 14V27Q38 37 23 42Q8 37 8 27Z" stroke="#3c2f00" stroke-width="1.5"/><path d="M15 23L21 29L32 18" stroke="#3c2f00" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg width="28" height="28" viewBox="0 0 46 46" fill="none" aria-hidden="true"><path d="M8 14L23 8L38 14V27Q38 37 23 42Q8 37 8 27Z" stroke="#3c2f00" stroke-width="1.5"/><path d="M15 23L21 29L32 18" stroke="#3c2f00" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
         <h3 class="font-headline text-2xl mb-4">Transferencia Bancaria</h3>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-6">Pago directo vía transferencia. Rápido, seguro y sin comisiones adicionales.</p>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-6">Pago directo vía transferencia bancaria o Nequi. Rápido, seguro y sin comisiones adicionales.</p>
         <span class="text-xs tracking-widest text-primary font-bold uppercase">Sin Comisión</span>
       </div>
       <div class="glass-panel p-10 flex flex-col items-center text-center group hover:-translate-y-4 transition-transform duration-700 rv" style="transition-delay:.2s">
         <div class="w-16 h-16 rounded-full champagne-gradient flex items-center justify-center mb-8 shadow-xl shadow-primary/20">
-          <svg width="28" height="28" viewBox="0 0 46 46" fill="none"><circle cx="23" cy="23" r="16" stroke="#3c2f00" stroke-width="1.5"/><path d="M23 13V33M17 19H29M17 27H29" stroke="#3c2f00" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg width="28" height="28" viewBox="0 0 46 46" fill="none" aria-hidden="true"><circle cx="23" cy="23" r="16" stroke="#3c2f00" stroke-width="1.5"/><path d="M23 13V33M17 19H29M17 27H29" stroke="#3c2f00" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
         <h3 class="font-headline text-2xl mb-4">Sistema Separo</h3>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-6">Aparta tu sala con un primer pago y cancela el resto según tu comodidad.</p>
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-6">Aparta tu mueble de lujo con un primer pago y cancela el resto según tu comodidad. Flexible y sin complicaciones.</p>
         <span class="text-xs tracking-widest text-primary font-bold uppercase">Flexible</span>
       </div>
     </div>
@@ -313,9 +657,8 @@ tailwind.config = {
 </section>
 
 <!-- ══ LOCATION ══ -->
-<section class="py-28 bg-surface" id="ubicacion">
+<section class="py-28 bg-surface" id="ubicacion" aria-label="Ubicación y contacto Atenea's Luxury">
   <div class="max-w-screen-2xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-    <!-- MAP EMBED -->
     <div class="order-2 md:order-1 relative rv">
       <div class="relative overflow-hidden" style="aspect-ratio:1/1">
         <iframe
@@ -324,60 +667,94 @@ tailwind.config = {
           style="border:0;filter:grayscale(85%) contrast(1.1) brightness(0.75);position:absolute;inset:0"
           allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          title="Atenea's Luxury en Google Maps">
+          title="Atenea's Luxury en Google Maps — Calle 16 #14-08 junto al Pereira Plaza, Dosquebradas">
         </iframe>
-        <!-- gold pin overlay -->
-        <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-surface/60 via-transparent to-transparent"></div>
-        <div class="absolute inset-0 pointer-events-none border border-primary/20"></div>
+        <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-surface/60 via-transparent to-transparent" aria-hidden="true"></div>
+        <div class="absolute inset-0 pointer-events-none border border-primary/20" aria-hidden="true"></div>
       </div>
-      <!-- CTA button over map -->
-      <a href="https://www.google.com/maps/place/Ateneas+luxury/@4.8211483,-75.6877724,756m/data=!3m1!1e3!4m16!1m9!3m8!1s0x8e3881a7ce661f45:0xdbec25105b5e8dc1!2sAteneas+luxury!8m2!3d4.8211483!4d-75.683159!9m1!1b1!16s%2Fg%2F11xp2bbpmk!3m5!1s0x8e3881a7ce661f45:0xdbec25105b5e8dc1!8m2!3d4.8211483!4d-75.683159!16s%2Fg%2F11xp2bbpmk?entry=ttu&g_ep=EgoyMDI2MDMzMS4wIKXMDSoASAFQAw%3D%3D"
+      <a href="https://www.google.com/maps/place/Ateneas+luxury/@4.8211483,-75.6877724,756m/data=!3m1!1e3!4m16!1m9!3m8!1s0x8e3881a7ce661f45:0xdbec25105b5e8dc1!2sAteneas+luxury!8m2!3d4.8211483!4d-75.683159!9m1!1b1!16s%2Fg%2F11xp2bbpmk!3m5!1s0x8e3881a7ce661f45:0xdbec25105b5e8dc1!8m2!3d4.8211483!4d-75.683159!16s%2Fg%2F11xp2bbpmk?entry=ttu"
          target="_blank" rel="noopener"
          class="absolute bottom-5 left-1/2 -translate-x-1/2 champagne-gradient text-on-primary font-bold uppercase tracking-[0.2em] text-[0.65rem] px-7 py-3 flex items-center gap-2 hover:opacity-90 transition-opacity shadow-xl whitespace-nowrap z-10">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
         Toca aquí para ir
       </a>
     </div>
-    <!-- INFO -->
     <div class="order-1 md:order-2 space-y-9 rv">
       <span class="text-primary uppercase tracking-[0.4em] text-[0.65rem] block">Encuéntranos</span>
       <h2 class="font-headline text-5xl md:text-6xl italic">Visita el <span class="text-primary not-italic font-bold">Showroom</span></h2>
       <div class="space-y-6">
         <div>
-          <span class="text-primary text-[0.62rem] tracking-[0.3em] uppercase block mb-2">Dirección</span>
-          <p class="text-xl font-light text-on-surface-variant leading-relaxed">
-            <strong class="text-on-surface font-semibold">CR 16A 9-61 Local 2</strong><br/>
-            Provenza, La Popa<br/>
-            Dosquebradas, Risaralda
-          </p>
+          <span class="text-primary text-[0.62rem] tracking-[0.3em] uppercase block mb-2">Dirección exacta</span>
+          <address class="text-xl font-light text-on-surface-variant leading-relaxed not-italic">
+            <strong class="text-on-surface font-semibold">Calle 16 #14-08</strong><br/>
+            Junto al Pereira Plaza<br/>
+            Dosquebradas, Risaralda, Colombia
+          </address>
         </div>
         <div>
-          <span class="text-primary text-[0.62rem] tracking-[0.3em] uppercase block mb-2">Horario</span>
-          <p class="text-xl font-light text-on-surface-variant">¡Te esperamos!</p>
+          <span class="text-primary text-[0.62rem] tracking-[0.3em] uppercase block mb-2">WhatsApp / Ventas</span>
+          <a href="https://wa.me/573117775923" target="_blank" rel="noopener"
+             class="text-xl font-light text-on-surface-variant hover:text-primary transition-colors block">
+            +57 311 777 5923
+          </a>
         </div>
         <div>
-          <span class="text-primary text-[0.62rem] tracking-[0.3em] uppercase block mb-2">Contacto directo</span>
-          <a href="https://wa.me/573155574385" target="_blank"
-             class="text-xl font-light text-on-surface-variant hover:text-primary transition-colors">
+          <span class="text-primary text-[0.62rem] tracking-[0.3em] uppercase block mb-2">Telefonía</span>
+          <a href="tel:+573155574385"
+             class="text-xl font-light text-on-surface-variant hover:text-primary transition-colors block">
             +57 315 557 4385
           </a>
         </div>
       </div>
       <div class="flex flex-col sm:flex-row gap-4 pt-2">
-        <a href="https://wa.me/573155574385" target="_blank"
+        <a href="https://wa.me/573117775923?text=Hola!%20Me%20interesan%20sus%20muebles%20de%20lujo%20%F0%9F%8C%9F"
+           target="_blank" rel="noopener"
            class="champagne-gradient px-9 py-4 text-[0.65rem] uppercase tracking-widest font-bold text-on-primary text-center hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.858L.057 23.5l5.7-1.497A11.93 11.93 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 0 1-4.964-1.347l-.356-.212-3.684.966.983-3.596-.232-.37A9.79 9.79 0 0 1 2.182 12c0-5.422 4.396-9.818 9.818-9.818 5.422 0 9.818 4.396 9.818 9.818 0 5.422-4.396 9.818-9.818 9.818z"/></svg>
-          WhatsApp
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.858L.057 23.5l5.7-1.497A11.93 11.93 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 0 1-4.964-1.347l-.356-.212-3.684.966.983-3.596-.232-.37A9.79 9.79 0 0 1 2.182 12c0-5.422 4.396-9.818 9.818-9.818 5.422 0 9.818 4.396 9.818 9.818 0 5.422-4.396 9.818-9.818 9.818z"/></svg>
+          WhatsApp — 311 777 5923
         </a>
-        <a href="#catalogo" class="text-[0.65rem] uppercase tracking-widest flex items-center justify-center gap-2 group text-on-surface-variant hover:text-primary transition-colors border border-white/10 px-9 py-4 hover:border-primary/40">Ver Catálogo →</a>
+        <a href="tel:+573155574385" class="text-[0.65rem] uppercase tracking-widest flex items-center justify-center gap-2 group text-on-surface-variant hover:text-primary transition-colors border border-white/10 px-9 py-4 hover:border-primary/40">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          315 557 4385
+        </a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ══ SOCIAL SHARE ══ -->
+<section class="py-16 bg-surface-container-lowest" aria-label="Compartir en redes sociales">
+  <div class="max-w-screen-xl mx-auto px-6 md:px-12 text-center">
+    <span class="text-primary text-[0.65rem] tracking-[0.4em] uppercase block mb-4">Comparte Atenea's Luxury</span>
+    <h2 class="font-headline text-3xl italic mb-8">Cuéntale a tus amigos sobre <span class="text-primary">nuestros muebles</span></h2>
+    <div class="share-bar flex flex-wrap justify-center gap-3">
+      <a href="https://wa.me/?text=Mira%20los%20muebles%20de%20lujo%20de%20Atenea%27s%20Luxury%20en%20Dosquebradas%20%F0%9F%8C%9F%20https%3A%2F%2Fateneasluxury.com"
+         target="_blank" rel="noopener" aria-label="Compartir en WhatsApp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.858L.057 23.5l5.7-1.497A11.93 11.93 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://www.instagram.com/muebles.ateneasluxury"
+         target="_blank" rel="noopener" aria-label="Seguir en Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        Instagram
+      </a>
+      <a href="https://www.tiktok.com/@ateneas.luxury"
+         target="_blank" rel="noopener" aria-label="Seguir en TikTok">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.79a8.18 8.18 0 0 0 4.78 1.52V6.86a4.85 4.85 0 0 1-1.01-.17z"/></svg>
+        TikTok
+      </a>
+      <a href="https://maps.app.goo.gl/ikuk6TGyLMcVFtoeA"
+         target="_blank" rel="noopener" aria-label="Dejar reseña en Google Maps">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Reseña Google
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ══ REVIEWS ══ -->
-<section class="py-24 bg-surface-container-lowest relative overflow-hidden">
-  <div class="absolute inset-0 pointer-events-none">
+<section class="py-24 bg-surface-container-lowest relative overflow-hidden" aria-label="Reseñas y opiniones de clientes">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent"></div>
     <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent"></div>
     <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/4 rounded-full blur-[100px]"></div>
@@ -385,22 +762,18 @@ tailwind.config = {
   <div class="max-w-screen-xl mx-auto px-6 md:px-12 text-center rv">
     <span class="text-primary text-[0.65rem] tracking-[0.4em] uppercase block mb-5">Comunidad Atenea's</span>
     <h2 class="font-headline text-4xl md:text-6xl italic tracking-tight mb-6">
-      ¿Ya eres cliente <span class="text-primary not-italic font-bold">satisfecho?</span>
+      ¿Ya eres cliente <span class="text-primary not-italic font-bold">satisfecho de nuestros muebles?</span>
     </h2>
     <p class="text-on-surface-variant text-base md:text-lg font-light max-w-xl mx-auto leading-relaxed mb-12">
-      Tu opinión ayuda a más familias a encontrar la sala perfecta. Comparte tu experiencia y sé parte de nuestra familia.
+      Tu opinión ayuda a más familias colombianas a encontrar los muebles perfectos para su hogar. Comparte tu experiencia y sé parte de nuestra familia.
     </p>
-
-    <!-- Star display -->
-    <div class="flex justify-center gap-2 mb-10">
-      <span class="text-primary text-3xl">★</span>
-      <span class="text-primary text-3xl">★</span>
-      <span class="text-primary text-3xl">★</span>
-      <span class="text-primary text-3xl">★</span>
-      <span class="text-primary text-3xl">★</span>
+    <div class="flex justify-center gap-2 mb-10" aria-label="5 estrellas">
+      <span class="text-primary text-3xl" aria-hidden="true">★</span>
+      <span class="text-primary text-3xl" aria-hidden="true">★</span>
+      <span class="text-primary text-3xl" aria-hidden="true">★</span>
+      <span class="text-primary text-3xl" aria-hidden="true">★</span>
+      <span class="text-primary text-3xl" aria-hidden="true">★</span>
     </div>
-
-    <!-- CTA card -->
     <div class="glass-panel max-w-lg mx-auto p-8 md:p-10 relative">
       <div class="absolute -top-4 left-1/2 -translate-x-1/2 champagne-gradient text-on-primary text-[0.55rem] tracking-[0.3em] uppercase font-bold px-5 py-1.5">
         Deja tu reseña
@@ -412,28 +785,37 @@ tailwind.config = {
         <a href="https://maps.app.goo.gl/ikuk6TGyLMcVFtoeA"
            target="_blank" rel="noopener"
            class="champagne-gradient text-on-primary font-bold uppercase tracking-[0.2em] text-xs px-10 py-4 hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-3 shadow-lg shadow-primary/20">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
           Escribir en Google Maps
         </a>
-        <a href="https://wa.me/573155574385?text=Hola!%20Quiero%20compartir%20mi%20experiencia%20con%20Atenea's%20Luxury%20%F0%9F%8C%9F"
+        <a href="https://wa.me/573117775923?text=Hola!%20Quiero%20compartir%20mi%20experiencia%20con%20Atenea%27s%20Luxury%20%F0%9F%8C%9F"
            target="_blank" rel="noopener"
            class="border border-primary/40 text-primary uppercase tracking-[0.2em] text-xs px-10 py-4 hover:bg-primary/10 hover:border-primary transition-colors inline-flex items-center justify-center gap-3">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.858L.057 23.5l5.7-1.497A11.93 11.93 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 0 1-4.964-1.347l-.356-.212-3.684.966.983-3.596-.232-.37A9.79 9.79 0 0 1 2.182 12c0-5.422 4.396-9.818 9.818-9.818 5.422 0 9.818 4.396 9.818 9.818 0 5.422-4.396 9.818-9.818 9.818z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.858L.057 23.5l5.7-1.497A11.93 11.93 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
           Contar por WhatsApp
         </a>
       </div>
-      <p class="text-on-surface-variant text-xs mt-6 opacity-60 tracking-wider">Solo toma 1 minuto · Ayudas a más familias colombianas</p>
+      <p class="text-on-surface-variant text-xs mt-6 opacity-60 tracking-wider">Solo toma 1 minuto · Ayudas a más familias colombianas a encontrar su mueble ideal</p>
     </div>
   </div>
 </section>
 
 <!-- ══ FOOTER ══ -->
-<footer class="bg-neutral-950 py-20 px-8 md:px-12 border-t border-neutral-800">
+<footer class="bg-neutral-950 py-20 px-8 md:px-12 border-t border-neutral-800" role="contentinfo">
   <div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-screen-2xl mx-auto">
     <div>
-      <div class="font-headline text-xl tracking-[0.18em] text-primary mb-5">Atenea's Luxury</div>
+      <div class="flex items-center gap-3 mb-5">
+        <img src="Logo.png" alt="Atenea's Luxury — muebles de lujo Dosquebradas" class="h-10 w-auto object-contain"/>
+        <div class="font-headline text-xl tracking-[0.18em] text-primary">Atenea's Luxury</div>
+      </div>
       <p class="text-[0.7rem] uppercase tracking-[0.14em] text-neutral-400 leading-loose max-w-xs">
-        Salas &amp; Sofás de Lujo · Dosquebradas, Colombia.<br/>Diseño exclusivo, fabricación local.
+        Maderas con el alma, muebles con historia.<br/>
+        Salas · Alcobas · Sofás · Comedores<br/>
+        Dosquebradas, Risaralda, Colombia.
+      </p>
+      <p class="text-[0.65rem] text-neutral-500 mt-4 leading-relaxed">
+        Calle 16 #14-08, junto al Pereira Plaza<br/>
+        Dosquebradas, Risaralda
       </p>
     </div>
     <div>
@@ -441,53 +823,70 @@ tailwind.config = {
       <ul class="space-y-3 text-[0.7rem] uppercase tracking-[0.14em] text-neutral-400">
         <li class="hover:text-primary hover:translate-x-1 transition-all duration-300 cursor-pointer"><a href="#nosotros">Nosotros</a></li>
         <li class="hover:text-primary hover:translate-x-1 transition-all duration-300 cursor-pointer"><a href="#catalogo">Catálogo</a></li>
+        <li class="hover:text-primary hover:translate-x-1 transition-all duration-300 cursor-pointer"><a href="#colores">Colores y Telas</a></li>
         <li class="hover:text-primary hover:translate-x-1 transition-all duration-300 cursor-pointer"><a href="#pago">Métodos de Pago</a></li>
         <li class="hover:text-primary hover:translate-x-1 transition-all duration-300 cursor-pointer"><a href="#ubicacion">Ubicación</a></li>
       </ul>
     </div>
     <div>
-      <h4 class="text-primary mb-5 uppercase tracking-widest text-xs font-bold">Atención</h4>
+      <h4 class="text-primary mb-5 uppercase tracking-widest text-xs font-bold">Atención al Cliente</h4>
       <ul class="space-y-3 text-[0.7rem] uppercase tracking-[0.14em] text-neutral-400">
-        <li class="hover:text-primary transition-colors cursor-pointer"><a href="https://wa.me/573155574385" target="_blank">WhatsApp</a></li>
+        <li class="hover:text-primary transition-colors cursor-pointer"><a href="https://wa.me/573117775923" target="_blank" rel="noopener">WhatsApp: 311 777 5923</a></li>
+        <li class="hover:text-primary transition-colors cursor-pointer"><a href="tel:+573155574385">Teléfono: 315 557 4385</a></li>
+        <li class="hover:text-primary transition-colors cursor-pointer"><a href="https://www.instagram.com/muebles.ateneasluxury" target="_blank" rel="noopener">Instagram: @muebles.ateneasluxury</a></li>
+        <li class="hover:text-primary transition-colors cursor-pointer"><a href="https://www.tiktok.com/@ateneas.luxury" target="_blank" rel="noopener">TikTok: @ateneas.luxury</a></li>
         <li class="hover:text-primary transition-colors cursor-pointer">Envío a Todo Colombia</li>
         <li class="hover:text-primary transition-colors cursor-pointer">Sistema Separo</li>
-        <li class="hover:text-primary transition-colors cursor-pointer">Contáctanos</li>
       </ul>
     </div>
     <div>
       <h4 class="text-primary mb-5 uppercase tracking-widest text-xs font-bold">Únete al Club</h4>
       <div class="relative">
-        <input class="w-full bg-transparent border-b border-neutral-800 py-3 text-xs uppercase tracking-widest focus:outline-none focus:border-primary transition-colors text-neutral-400 placeholder:text-neutral-600" placeholder="Tu correo electrónico" type="email"/>
-        <button class="absolute right-0 top-1/2 -translate-y-1/2 text-primary text-lg">→</button>
+        <input class="w-full bg-transparent border-b border-neutral-800 py-3 text-xs uppercase tracking-widest focus:outline-none focus:border-primary transition-colors text-neutral-400 placeholder:text-neutral-600"
+               placeholder="Tu correo electrónico"
+               type="email"
+               aria-label="Suscríbete a nuestro newsletter"/>
+        <button class="absolute right-0 top-1/2 -translate-y-1/2 text-primary text-lg" aria-label="Suscribirse">→</button>
       </div>
+      <p class="text-neutral-600 text-[0.6rem] mt-3 tracking-wider">Recibe noticias de nuevas colecciones y promociones exclusivas.</p>
     </div>
   </div>
   <div class="max-w-screen-2xl mx-auto mt-16 pt-8 border-t border-neutral-900 flex flex-col md:flex-row justify-between items-center gap-4">
-    <p class="text-[0.68rem] uppercase tracking-[0.14em] text-neutral-500">Atenea's Luxury · Dosquebradas, Colombia. Todos los derechos reservados.</p>
+    <p class="text-[0.68rem] uppercase tracking-[0.14em] text-neutral-500">Atenea's Luxury · Dosquebradas, Risaralda, Colombia. </p>
+    <p class="text-[0.65rem] text-neutral-600 italic font-headline">Maderas con el alma, muebles con historia.</p>
   </div>
 </footer>
 
 <!-- ══ MODAL ══ -->
-<div id="mOv" onclick="if(event.target===this)closeMod()" class="hidden fixed inset-0 z-[200] bg-black/90 backdrop-blur-lg items-center justify-center p-4">
+<div id="mOv" onclick="if(event.target===this)closeMod()"
+     class="hidden fixed inset-0 z-[200] bg-black/90 backdrop-blur-lg items-center justify-center p-4"
+     role="dialog" aria-modal="true" aria-label="Detalle del producto">
   <div class="bg-surface-container border border-primary/20 max-w-lg w-full relative max-h-[92svh] overflow-y-auto">
-    <button onclick="closeMod()" class="absolute top-3 right-3 w-8 h-8 bg-primary/10 border border-primary/25 text-primary flex items-center justify-center hover:bg-primary/25 transition-colors z-10 text-xs">✕</button>
+    <button onclick="closeMod()" class="absolute top-3 right-3 w-8 h-8 bg-primary/10 border border-primary/25 text-primary flex items-center justify-center hover:bg-primary/25 transition-colors z-10 text-xs" aria-label="Cerrar">✕</button>
     <img id="mImg" class="w-full aspect-video object-cover block" src="" alt=""/>
     <div class="p-7">
       <div id="mRef" class="text-[0.52rem] tracking-[0.35em] text-primary uppercase mb-2"></div>
-      <div id="mName" class="font-headline text-3xl italic mb-4"></div>
-      <div class="flex items-baseline gap-3 mb-6 pb-5 border-b border-white/5">
-        <div id="mPrice" class="font-headline text-4xl text-primary">$ —</div>
-        <div class="text-xs uppercase tracking-widest text-on-surface-variant">Precio de lista</div>
-      </div>
-      <a href="#ubicacion" onclick="closeMod()" class="champagne-gradient px-8 py-3 text-on-primary font-bold uppercase tracking-[0.18em] text-xs inline-block hover:opacity-90 transition-opacity">Consultar disponibilidad</a>
+      <div id="mName" class="font-headline text-3xl italic mb-6"></div>
+      <a href="#ubicacion" onclick="closeMod()"
+         class="champagne-gradient px-8 py-3 text-on-primary font-bold uppercase tracking-[0.18em] text-xs inline-block hover:opacity-90 transition-opacity">
+        Consultar disponibilidad por WhatsApp
+      </a>
     </div>
   </div>
 </div>
 
+<!-- ══ WHATSAPP FLOTANTE ══ -->
+<a href="https://wa.me/573117775923?text=Hola!%20Me%20interesan%20sus%20muebles%20de%20lujo%20%F0%9F%8C%9F"
+   target="_blank" rel="noopener"
+   class="wa-float"
+   aria-label="Contactar por WhatsApp — 311 777 5923">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.858L.057 23.5l5.7-1.497A11.93 11.93 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 0 1-4.964-1.347l-.356-.212-3.684.966.983-3.596-.232-.37A9.79 9.79 0 0 1 2.182 12c0-5.422 4.396-9.818 9.818-9.818 5.422 0 9.818 4.396 9.818 9.818 0 5.422-4.396 9.818-9.818 9.818z"/></svg>
+</a>
+
 <script>
 /* ══ MARQUEE ══ */
 (function(){
-  var items=['Sofás de Lujo','Diseño Exclusivo','Calidad Premium','Fabricación Local','Salas de Lujo','Dosquebradas','Colombia','Atenea\'s Luxury'];
+  var items=['Salas de Lujo','Alcobas Premium','Sofás de Calidad','Comedores Exclusivos','Fabricación Colombiana','Dosquebradas','Risaralda','Atenea\'s Luxury','Maderas con el alma','Muebles con Historia'];
   var t=document.getElementById('mTrack'),h='';
   [items,items].forEach(function(s){s.forEach(function(it){
     h+='<span class="font-headline italic text-on-primary text-sm px-7 whitespace-nowrap">'+it+'</span>'
@@ -497,112 +896,133 @@ tailwind.config = {
 })();
 
 /* ══ CATALOG DATA ══ */
-var catalog=[
-  {ref:'001',name:'Sofá Boucle Clásico',tag:'sofa',price:3200000,img:'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80'},
-  {ref:'002',name:'Sala Dorada Premium',tag:'sectional',price:5800000,img:'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80'},
-  {ref:'003',name:'Sillón Pumpkin',tag:'silla',price:2100000,img:'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80'},
-  {ref:'004',name:'Sofá Chester Greige',tag:'sofa',price:3600000,img:'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=800&q=80'},
-  {ref:'005',name:'Sofá Rayado Marfil',tag:'sofa',price:2900000,img:'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=800&q=80'},
-  {ref:'006',name:'Sofá Orgánico Boucle',tag:'sofa',price:4100000,img:'https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=800&q=80'},
-  {ref:'007',name:'Chester Gris Topo',tag:'sofa',price:3400000,img:'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80'},
-  {ref:'008',name:'Sala Gris Elegante',tag:'sectional',price:6200000,img:'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80'},
-  {ref:'010',name:'Seccional Marshmallow',tag:'sectional',price:7800000,img:'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80'},
-  {ref:'012',name:'Sofá Curvo Crema',tag:'sofa',price:3900000,img:'https://images.unsplash.com/photo-1616137466211-f939a420be84?w=800&q=80'},
-  {ref:'014',name:'Silla Esmeralda',tag:'silla',price:1450000,img:'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=800&q=80'},
-  {ref:'019',name:'Sofá Azul Artístico',tag:'sofa',price:4400000,img:'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&q=80'},
-  {ref:'022',name:'Seccional Circular',tag:'sectional',price:8900000,img:'https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80'},
-  {ref:'023',name:'Sofá Verde Oscuro',tag:'sofa',price:3750000,img:'https://images.unsplash.com/photo-1549187774-b4e9b0445b41?w=800&q=80'},
-  {ref:'024',name:'Sillón Wing Chair',tag:'silla',price:1800000,img:'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=800&q=80'},
-  {ref:'038',name:'Sofá Boucle Dorado',tag:'sofa',price:5200000,img:'https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=800&q=80'},
-  {ref:'042',name:'Seccional Corduroy',tag:'sectional',price:7100000,img:'https://images.unsplash.com/photo-1564078516393-cf04bd966897?w=800&q=80'},
-  {ref:'052',name:'Seccional Blanco Negro',tag:'sectional',price:6800000,img:'https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?w=800&q=80'},
-  {ref:'057',name:'Sala Completa Premium',tag:'sectional',price:9800000,img:'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80'},
-  {ref:'058',name:'Gran Sala Lujo Total',tag:'sectional',price:12500000,img:'https://images.unsplash.com/photo-1615529328331-f8917597711f?w=800&q=80'},
-  {ref:'044',name:'Sala Mármol Premium',tag:'sectional',price:10200000,img:'https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=800&q=80'},
-];
+var catalogData = {
+  salas: [
+    'Sala_1.jpeg','Sala_2.jpeg','Sala_3.jpeg','Sala_4.jpeg','Sala_5.jpeg',
+    'Sala_6.jpeg','Sala_7.jpeg','Sala_8.jpeg','Sala_9.jpeg','Sala_10.jpeg',
+    'Sala_11.jpeg','Sala_12.jpeg','Sala_13.jpeg','Sala_14.jpeg','Sala_15.jpeg',
+    'Sala_16.jpeg','Sala_17.jpeg','Sala_18.jpeg','Sala_19.jpeg','Sala_20.jpeg',
+    'Sala_21.jpeg','Sala_22.jpeg','Sala_23.jpeg','Sala_24.jpeg','Sala_25.jpeg',
+    'Sala_26.jpeg','Sala_27.jpeg'
+  ],
+  alcobaslujo: [
+    'Alcoba_1.jpeg','Alcoba_2.jpeg','Alcoba_3.jpeg','Alcoba_4.jpeg','Alcoba_5.jpeg',
+    'Alcoba_6.jpeg','Alcoba_7.jpeg','Alcoba_8.jpeg','Alcoba_9.jpeg','Alcoba_10.jpeg',
+    'Alcoba_11.jpeg','Alcoba_12.jpeg','Alcoba_13.jpeg','Alcoba_14.jpeg','Alcoba_15.jpeg',
+    'Alcoba_16.jpeg','Alcoba_17.jpeg','Alcoba_18.jpeg','Alcoba_19.jpeg','Alcoba_20.jpeg',
+    'Alcoba_21.jpeg','Alcoba_22.jpeg','Alcoba_23.jpeg','Alcoba_24.jpeg','Alcoba_25.jpeg',
+    'Alcoba_26.jpeg','Alcoba_27.jpeg','Alcoba_28.jpeg','Alcoba_29.jpeg','Alcoba_30.jpeg',
+    'Alcoba_31.jpeg','Alcoba_32.jpeg','Alcoba_33.jpeg','Alcoba_34.jpeg','Alcoba_35.jpeg',
+    'Alcoba_36.jpeg','Alcoba_37.jpeg'
+  ],
+  alcobasmin: [
+    'AlcobaM_1.jpeg','AlcobaM_2.jpeg','AlcobaM_3.jpeg','AlcobaM_4.jpeg','AlcobaM_5.jpeg',
+    'AlcobaM_6.jpeg','AlcobaM_7.jpeg','AlcobaM_8.jpeg','AlcobaM_9.jpeg','AlcobaM_10.jpeg',
+    'AlcobaM_11.jpeg','AlcobaM_12.jpeg','AlcobaM_13.jpeg','AlcobaM_14.jpeg','AlcobaM_15.jpeg',
+    'AlcobaM_16.jpeg','AlcobaM_17.jpeg','AlcobaM_18.jpeg','AlcobaM_19.jpeg','AlcobaM_20.jpeg',
+    'AlcobaM_21.jpeg','AlcobaM_22.jpeg','AlcobaM_23.jpeg','AlcobaM_24.jpeg','AlcobaM_25.jpeg'
+  ],
+  sofas: [
+    'Sofa_1.jpeg','Sofa_2.jpeg','Sofa_3.jpeg','Sofa_4.jpeg','Sofa_5.jpeg',
+    'Sofa_6.jpeg','Sofa_7.jpeg','Sofa_8.jpeg','Sofa_9.jpeg','Sofa_10.jpeg',
+    'Sofa_11.jpeg','Sofa_12.jpeg','Sofa_13.jpeg','Sofa_14.jpeg','Sofa_15.jpeg',
+    'Sofa_16.jpeg','Sofa_17.jpeg','Sofa_18.jpeg','Sofa_19.jpeg'
+  ],
+  comedores: [
+    'Comedor_1.jpeg','Comedor_2.jpeg','Comedor_3.jpeg','Comedor_4.jpeg','Comedor_5.jpeg',
+    'Comedor_6.jpeg','Comedor_7.jpeg','Comedor_8.jpeg','Comedor_9.jpeg','Comedor_10.jpeg',
+    'Comedor_11.jpeg','Comedor_12.jpeg','Comedor_13.jpeg','Comedor_14.jpeg','Comedor_15.jpeg',
+    'Comedor_16.jpeg'
+  ]
+};
 
-function fmtCOP(n){return '$ '+n.toLocaleString('es-CO');}
+var sectionNames = {
+  salas:'Sala',
+  alcobaslujo:'Alcoba de Lujo',
+  alcobasmin:'Alcoba Minimalista',
+  sofas:'Sofá / Sofacama',
+  comedores:'Comedor'
+};
 
-/* ── CATALOG GRID ── */
-function renderCatalog(filter){
-  var items=filter==='all'?catalog:catalog.filter(function(i){return i.tag===filter;});
-  var g=document.getElementById('catGrid');
-  g.innerHTML='';
+/* BUILD GRID */
+function buildGrid(sectionKey){
+  var imgs = catalogData[sectionKey];
+  var gridEl = document.getElementById('grid-'+sectionKey);
+  if(!gridEl||gridEl.dataset.built) return;
+  gridEl.dataset.built='1';
 
-  items.forEach(function(item,idx){
-    var card=document.createElement('div');
+  var label = sectionNames[sectionKey];
+  imgs.forEach(function(filename, idx){
+    var num = idx+1;
+    var refStr = String(num).padStart(3,'0');
+    var card = document.createElement('div');
     card.className='cat-card rv';
-    card.style.transitionDelay=(idx%6*.06)+'s';
+    card.style.transitionDelay=(idx%6*0.06)+'s';
 
     card.innerHTML=
       '<div class="card-img-wrap">'+
         '<div class="bracket-tl"></div>'+
         '<div class="bracket-br"></div>'+
-        '<img src="'+item.img+'" alt="'+item.name+'" loading="lazy"/>'+
-        '<div class="price-overlay">'+
-          '<div class="text-[0.5rem] tracking-[0.28em] uppercase text-primary/70 mb-1">Precio de lista</div>'+
-          '<div class="font-headline text-3xl italic text-primary price-num">'+fmtCOP(item.price)+'</div>'+
+        '<img src="'+filename+'" alt="'+label+' referencia '+refStr+' — mueble de lujo Atenea\'s Luxury Dosquebradas" loading="lazy"/>'+
+        '<div class="detail-overlay">'+
           '<div class="flex gap-2 mt-3">'+
-            '<button class="o-detail champagne-gradient text-on-primary px-4 py-2 text-[0.54rem] tracking-widest uppercase font-bold hover:opacity-90 transition-opacity" data-idx="'+idx+'">Ver detalle</button>'+
-            '<a href="#ubicacion" class="border border-white/20 text-white px-4 py-2 text-[0.54rem] tracking-widest uppercase hover:border-primary hover:text-primary transition-colors">Consultar</a>'+
+            '<button class="o-detail champagne-gradient text-on-primary px-4 py-2 text-[0.54rem] tracking-widest uppercase font-bold hover:opacity-90 transition-opacity" data-img="'+filename+'" data-name="'+label+' #'+num+'" data-ref="'+refStr+'">Ver detalle</button>'+
+            '<a href="https://wa.me/573117775923?text=Hola!%20Me%20interesa%20el%20'+encodeURIComponent(label)+'+%23'+num+'%20que%20vi%20en%20el%20cat%C3%A1logo%20%F0%9F%8C%9F" target="_blank" rel="noopener" class="border border-white/20 text-white px-4 py-2 text-[0.54rem] tracking-widest uppercase hover:border-primary hover:text-primary transition-colors">Consultar</a>'+
           '</div>'+
         '</div>'+
       '</div>'+
       '<div class="py-4 px-3 flex items-start justify-between gap-2 border-t border-white/5">'+
         '<div>'+
-          '<div class="text-[0.5rem] tracking-[0.28em] uppercase text-primary mb-1">Ref. '+item.ref+'</div>'+
-          '<div class="font-headline text-xl italic leading-snug">'+item.name+'</div>'+
-          '<div class="text-xs text-on-surface-variant mt-1">'+fmtCOP(item.price)+'</div>'+
+          '<div class="text-[0.5rem] tracking-[0.28em] uppercase text-primary mb-1">Ref. '+refStr+'</div>'+
+          '<div class="font-headline text-xl italic leading-snug">'+label+' #'+num+'</div>'+
         '</div>'+
-        '<span class="material-symbols-outlined text-primary text-base mt-1 flex-shrink-0">arrow_outward</span>'+
+        '<span class="material-symbols-outlined text-primary text-base mt-1 flex-shrink-0" aria-hidden="true">arrow_outward</span>'+
       '</div>';
 
     card.querySelector('.o-detail').addEventListener('click',function(e){
-      e.stopPropagation();openMod(items[+this.getAttribute('data-idx')]);
+      e.stopPropagation();
+      openMod(this.dataset.img, this.dataset.name, this.dataset.ref);
     });
 
-    var pn=card.querySelector('.price-num'),tgt=item.price,animated=false;
-    card.addEventListener('mouseenter',function(){
-      if(!animated){animated=true;animPrice(pn,tgt,650);}
-    });
-    card.addEventListener('mouseleave',function(){animated=false;pn.textContent=fmtCOP(tgt);});
-
-    g.appendChild(card);
+    gridEl.appendChild(card);
   });
   observeRv();
 }
 
-function animPrice(el,target,dur){
-  var st=null;
-  function ease(t){return t<.5?2*t*t:-1+(4-2*t)*t;}
-  function step(ts){
-    if(!st)st=ts;var p=Math.min((ts-st)/dur,1);
-    el.textContent=fmtCOP(Math.round(ease(p)*target));
-    if(p<1)requestAnimationFrame(step);else el.textContent=fmtCOP(target);
-  }
-  requestAnimationFrame(step);
-}
-
-function filterCat(tag,btn){
-  document.querySelectorAll('.ftab').forEach(function(t){
-    t.classList.remove('is-active','bg-primary','text-on-primary','border-primary');
-    t.classList.add('border-white/10','text-on-surface-variant');
+/* COLORS GRID */
+(function(){
+  var colors=[];
+  for(var i=1;i<=12;i++) colors.push('Color_'+i+'.jpeg');
+  var cg=document.getElementById('colorGrid');
+  colors.forEach(function(filename,idx){
+    var div=document.createElement('div');
+    div.className='color-card rv';
+    div.style.transitionDelay=(idx%4*0.07)+'s';
+    div.innerHTML='<img src="'+filename+'" alt="Color y tela disponible #'+(idx+1)+' para muebles tapizados Atenea\'s Luxury Dosquebradas" loading="lazy"/>';
+    cg.appendChild(div);
   });
-  btn.classList.add('is-active','bg-primary','text-on-primary','border-primary');
-  btn.classList.remove('border-white/10','text-on-surface-variant');
-  renderCatalog(tag);
+})();
+
+/* SHOW SECTION */
+function showSection(key, btn){
+  document.querySelectorAll('.cat-section').forEach(function(s){s.classList.remove('active')});
+  document.querySelectorAll('.sec-tab').forEach(function(t){t.classList.remove('active')});
+  document.getElementById('sec-'+key).classList.add('active');
+  btn.classList.add('active');
+  buildGrid(key);
+  observeRv();
 }
 
-/* ══ MODAL ══ */
-function openMod(item){
-  document.getElementById('mImg').src=item.img;
-  document.getElementById('mRef').textContent='Referencia '+item.ref;
-  document.getElementById('mName').textContent=item.name;
-  var pe=document.getElementById('mPrice');pe.textContent='$ —';
+/* MODAL */
+function openMod(imgSrc, name, ref){
+  var mi=document.getElementById('mImg');
+  mi.src=imgSrc;
+  mi.alt=name+' — mueble de lujo Atenea\'s Luxury';
+  document.getElementById('mRef').textContent='Referencia '+ref;
+  document.getElementById('mName').textContent=name;
   var ov=document.getElementById('mOv');
   ov.classList.remove('hidden');ov.classList.add('flex');
   document.body.style.overflow='hidden';
-  setTimeout(function(){animPrice(pe,item.price,900);},200);
 }
 function closeMod(){
   var ov=document.getElementById('mOv');
@@ -610,7 +1030,7 @@ function closeMod(){
   document.body.style.overflow='';
 }
 
-/* ══ SCROLL REVEAL ══ */
+/* SCROLL REVEAL */
 function observeRv(){
   var els=document.querySelectorAll('.rv:not(.vis)');
   var ob=new IntersectionObserver(function(entries){
@@ -619,13 +1039,13 @@ function observeRv(){
   els.forEach(function(el){ob.observe(el);});
 }
 
-/* ══ NAV MOBILE ══ */
+/* NAV MOBILE */
 document.getElementById('burger').addEventListener('click',function(){document.getElementById('mobMenu').classList.add('open');});
 document.getElementById('mobClose').addEventListener('click',function(){document.getElementById('mobMenu').classList.remove('open');});
 function closeMob(){document.getElementById('mobMenu').classList.remove('open');}
 
-/* ══ INIT ══ */
-renderCatalog('all');
+/* INIT */
+buildGrid('salas');
 observeRv();
 </script>
 </body>
