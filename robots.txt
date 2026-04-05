@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /cgi-bin/
+
+Sitemap: https://ateneas-luxury.com/sitemap.xml
+
+# Crawl-delay for bots
+Crawl-delay: 10
