@@ -145,10 +145,10 @@ tailwind.config = {
   .cat-card:hover .bracket-tl,.cat-card:hover .bracket-br{width:42px;height:42px;opacity:1}
 
   .card-img-wrap{overflow:hidden;aspect-ratio:4/3;background:#1c1b1b;position:relative}
-  .card-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;
+  .card-img-wrap img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;
     transition:transform 1.4s cubic-bezier(.16,1,.3,1),filter .5s;
-    filter:brightness(.82) saturate(.88)}
-  .cat-card:hover .card-img-wrap img{transform:scale(1.07);filter:brightness(.97) saturate(1.05)}
+    filter:brightness(.95) saturate(.9);padding:4px;box-sizing:border-box}
+  .cat-card:hover .card-img-wrap img{transform:scale(1.05);filter:brightness(1.05) saturate(1.08)}
 
   /* DETAIL OVERLAY — no prices */
   .detail-overlay{
@@ -298,8 +298,71 @@ tailwind.config = {
   }
   .share-bar a:hover{border-color:#f2ca50;color:#f2ca50;background:rgba(242,202,80,.05)}
 
-  /* WHATSAPP FLOAT */
-  .wa-float{
+  /* ═══ LIGHT MODE OVERRIDE ═══ */
+  html.light body { background:#f5f3ee; color:#1a1a1a; }
+  html.light { --bg:#f5f3ee; }
+  html.light .bg-background, html.light body { background-color:#f5f3ee !important; }
+  html.light .bg-surface { background-color:#ede9e0 !important; }
+  html.light .bg-surface-container-lowest { background-color:#ece8df !important; }
+  html.light .bg-surface-container-low { background-color:#e8e4db !important; }
+  html.light .bg-surface-container { background-color:#e2ddd4 !important; }
+  html.light .bg-surface-container-high { background-color:#ddd8ce !important; }
+  html.light .bg-surface-container-highest { background-color:#d6d1c7 !important; }
+  html.light .text-on-surface { color:#1a1a1a !important; }
+  html.light .text-on-surface-variant { color:#4a4540 !important; }
+  html.light .cat-card { background:#fff; border-color:rgba(212,175,55,0.18); }
+  html.light .glass-panel { background:rgba(255,255,255,0.7); border-color:rgba(212,175,55,0.25); }
+  html.light .cat-card .card-img-wrap { background:#f0ece3; }
+  html.light nav { background:rgba(245,243,238,0.85) !important; border-color:rgba(0,0,0,0.07) !important; }
+  html.light .text-on-surface-variant.opacity-55 { color:#6b6560 !important; }
+  html.light footer { background:#e8e4db !important; border-color:#d0ccc3 !important; }
+  html.light .bg-neutral-950 { background-color:#e8e4db !important; }
+  html.light .border-neutral-800, html.light .border-neutral-900 { border-color:#ccc8be !important; }
+  html.light .text-neutral-400 { color:#5a5550 !important; }
+  html.light .text-neutral-500 { color:#6b6560 !important; }
+  html.light .text-neutral-600 { color:#7a7570 !important; }
+  html.light #colores-section, html.light [id="colores-section"] { background:#e8e0cc !important; }
+  html.light .mob-menu { background:rgba(245,243,238,0.98) !important; }
+  html.light .mob-menu a { color:#1a1a1a !important; }
+  html.light #mPanel { background:#fff !important; }
+  html.light #mGallery { background:#f0ece3 !important; }
+  html.light #mImg { background:#f0ece3 !important; }
+  html.light #mThumbs { background:#e8e4db !important; }
+
+  /* THEME TOGGLE BUTTON */
+  .theme-toggle {
+    position: fixed;
+    bottom: 100px;
+    right: 28px;
+    z-index: 300;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(30,28,26,0.85);
+    border: 1.5px solid rgba(242,202,80,0.45);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform .3s, box-shadow .3s, background .3s;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  }
+  html.light .theme-toggle {
+    background: rgba(255,255,255,0.9);
+    border-color: rgba(212,175,55,0.5);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  }
+  .theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(242,202,80,0.3);
+  }
+  .theme-toggle svg { transition: opacity .3s; }
+  .theme-toggle .icon-moon { display:block; }
+  .theme-toggle .icon-sun  { display:none; }
+  html.light .theme-toggle .icon-moon { display:none; }
+  html.light .theme-toggle .icon-sun  { display:block; }
+
     position:fixed;bottom:28px;right:28px;z-index:300;
     width:58px;height:58px;border-radius:50%;
     background:linear-gradient(135deg,#25d366,#128c7e);
@@ -431,7 +494,7 @@ tailwind.config = {
         Trabajamos con artesanos colombianos de décadas de experiencia. Cada sala, cada alcoba y cada sofá es fabricado con materiales premium y tapizados de alta resistencia seleccionados con rigor. Desde salas clásicas de lujo hasta alcobas minimalistas modernas, nuestro catálogo ofrece más de 100 referencias únicas para satisfacer todos los gustos y estilos de vida.
       </p>
       <p class="text-on-surface-variant text-base leading-relaxed mb-5">
-        Atendemos clientes de toda la <strong class="text-on-surface">región cafetera</strong> — Pereira, Manizales, Armenia, Medellín y más allá — con envío a nivel nacional. Visita nuestro showroom en <strong class="text-on-surface">Calle 16 #14-08, junto al Pereira Plaza</strong> y vive la experiencia de tocar, sentir y enamorarte de tu mueble perfecto antes de decidir.
+        Atendemos clientes de toda la <strong class="text-on-surface">región cafetera</strong> — Pereira, Manizales, Armenia, Medellín y más allá — con envío a nivel nacional. Visita nuestro Local en <strong class="text-on-surface">Calle 16 #14-08, junto al Pereira Plaza</strong> y vive la experiencia de tocar, sentir y enamorarte de tu mueble perfecto antes de decidir.
       </p>
       <p class="text-on-surface-variant text-base leading-relaxed">
         Contamos con sistema de pago flexible, planes de separado y financiación adaptada a tu comodidad. Tu hogar merece lo mejor — y en Atenea's Luxury, lo mejor es lo que hacemos cada día.
@@ -464,8 +527,8 @@ tailwind.config = {
         <div class="w-11 h-11 mb-6 flex items-center justify-center border border-primary/30 text-primary group-hover:bg-primary/10 transition-colors">
           <svg width="26" height="26" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 39V18L24 8L40 18V39Z" stroke="currentColor" stroke-width="1.5"/><rect x="18" y="27" width="12" height="12" stroke="currentColor" stroke-width="1.3"/></svg>
         </div>
-        <h3 class="font-headline text-xl mb-3">Showroom en Pereira</h3>
-        <p class="text-sm text-on-surface-variant leading-relaxed">Nuestro showroom físico en Pereira, Risaralda, junto al Pereira Plaza. Toca, siente y enamórate de tu mueble perfecto antes de decidir.</p>
+        <h3 class="font-headline text-xl mb-3">Local en Pereira</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Nuestro Local físico en Pereira, Risaralda, junto al Pereira Plaza. Toca, siente y enamórate de tu mueble perfecto antes de decidir.</p>
       </div>
     </div>
   </div>
@@ -612,7 +675,7 @@ tailwind.config = {
       <div class="absolute -top-10 -left-10 w-56 h-56 bg-primary/5 rounded-full blur-[80px] pointer-events-none" aria-hidden="true"></div>
       <img class="relative z-10 w-full aspect-[4/5] object-cover"
            src="Sala_5.jpeg"
-           alt="Sala de lujo en showroom Atenea's Luxury Pereira — muebles tapizados premium con diseño exclusivo"/>
+           alt="Sala de lujo en Local Atenea's Luxury Pereira — muebles tapizados premium con diseño exclusivo"/>
       <div class="absolute -bottom-8 -right-8 glass-panel p-7 z-20 max-w-xs hidden md:block">
         <p class="font-headline text-lg italic">"Maderas con el alma, muebles con historia."</p>
         <p class="mt-3 text-[0.65rem] uppercase tracking-widest text-primary">— Atenea's Luxury</p>
@@ -702,7 +765,7 @@ tailwind.config = {
     </div>
     <div class="order-1 md:order-2 space-y-9 rv">
       <span class="text-primary uppercase tracking-[0.4em] text-[0.65rem] block">Encuéntranos</span>
-      <h2 class="font-headline text-5xl md:text-6xl italic">Visita el <span class="text-primary not-italic font-bold">Showroom</span></h2>
+      <h2 class="font-headline text-5xl md:text-6xl italic">Visita el <span class="text-primary not-italic font-bold">Local</span></h2>
       <div class="space-y-6">
         <div>
           <span class="text-primary text-[0.62rem] tracking-[0.3em] uppercase block mb-2">Dirección exacta</span>
@@ -910,23 +973,98 @@ tailwind.config = {
   </div>
 </footer>
 
-<!-- ══ MODAL ══ -->
+<!-- ══ MODAL SHOPIFY-STYLE ══ -->
 <div id="mOv" onclick="if(event.target===this)closeMod()"
      class="hidden fixed inset-0 z-[200] bg-black/90 backdrop-blur-lg items-center justify-center p-4"
      role="dialog" aria-modal="true" aria-label="Detalle del producto">
-  <div class="bg-surface-container border border-primary/20 max-w-lg w-full relative max-h-[92svh] overflow-y-auto">
-    <button onclick="closeMod()" class="absolute top-3 right-3 w-8 h-8 bg-primary/10 border border-primary/25 text-primary flex items-center justify-center hover:bg-primary/25 transition-colors z-10 text-xs" aria-label="Cerrar">✕</button>
-    <img id="mImg" class="w-full aspect-video object-cover block" src="" alt=""/>
-    <div class="p-7">
-      <div id="mRef" class="text-[0.52rem] tracking-[0.35em] text-primary uppercase mb-2"></div>
-      <div id="mName" class="font-headline text-3xl italic mb-6"></div>
-      <a href="#ubicacion" onclick="closeMod()"
-         class="champagne-gradient px-8 py-3 text-on-primary font-bold uppercase tracking-[0.18em] text-xs inline-block hover:opacity-90 transition-opacity">
-        Consultar disponibilidad por WhatsApp
-      </a>
+  <div id="mPanel" class="bg-surface-container border border-primary/20 w-full relative overflow-y-auto"
+       style="max-width:900px;max-height:92svh;display:grid;grid-template-columns:1fr 1fr">
+    <button onclick="closeMod()" class="absolute top-3 right-3 w-8 h-8 bg-primary/10 border border-primary/25 text-primary flex items-center justify-center hover:bg-primary/25 transition-colors z-10 text-xs" aria-label="Cerrar" style="z-index:20">✕</button>
+
+    <!-- LEFT: Image gallery -->
+    <div id="mGallery" style="display:flex;flex-direction:column;gap:0;background:#111">
+      <!-- Main image -->
+      <div style="flex:1;min-height:320px;position:relative;overflow:hidden">
+        <img id="mImg" src="" alt="" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;min-height:320px;background:#111"/>
+      </div>
+      <!-- Thumbnails -->
+      <div id="mThumbs" style="display:flex;gap:4px;padding:6px;background:#0e0e0e;overflow-x:auto;flex-shrink:0"></div>
+    </div>
+
+    <!-- RIGHT: Product info -->
+    <div style="padding:36px 32px;display:flex;flex-direction:column;gap:20px;overflow-y:auto">
+      <div>
+        <div id="mRef" class="text-[0.52rem] tracking-[0.35em] text-primary uppercase mb-2"></div>
+        <div id="mName" class="font-headline text-3xl italic leading-tight"></div>
+      </div>
+
+      <!-- Color variants -->
+      <div id="mVariantsWrap" style="display:none">
+        <div class="text-[0.55rem] tracking-[0.28em] uppercase text-on-surface-variant mb-3">Color disponible</div>
+        <div id="mVariants" style="display:flex;flex-wrap:wrap;gap:8px"></div>
+      </div>
+
+      <!-- Description -->
+      <div style="border-top:1px solid rgba(255,255,255,0.07);padding-top:18px">
+        <p class="text-on-surface-variant text-sm leading-relaxed">
+          Alcoba de lujo fabricada por artesanos colombianos con materiales de alta calidad. Tapizado resistente seleccionado con rigor, madera noble estructural y espuma de alta densidad. Disponible en múltiples colores y telas según nuestro catálogo de tapizados premium.
+        </p>
+        <ul style="margin-top:14px;display:flex;flex-direction:column;gap:6px" class="text-on-surface-variant text-xs">
+          <li style="display:flex;align-items:center;gap:8px"><span class="text-primary">✦</span> Fabricación 100% colombiana</li>
+          <li style="display:flex;align-items:center;gap:8px"><span class="text-primary">✦</span> Tapizado de alta resistencia</li>
+          <li style="display:flex;align-items:center;gap:8px"><span class="text-primary">✦</span> Madera estructural noble</li>
+          <li style="display:flex;align-items:center;gap:8px"><span class="text-primary">✦</span> Envío a todo Colombia</li>
+          <li style="display:flex;align-items:center;gap:8px"><span class="text-primary">✦</span> Sistema Separo disponible</li>
+        </ul>
+      </div>
+
+      <!-- Actions -->
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:auto;padding-top:8px">
+        <a id="mWaBtn" href="#" target="_blank" rel="noopener"
+           class="champagne-gradient text-on-primary font-bold uppercase tracking-[0.18em] text-xs text-center py-4 px-6 hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.858L.057 23.5l5.7-1.497A11.93 11.93 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.793 9.793 0 0 1-4.964-1.347l-.356-.212-3.684.966.983-3.596-.232-.37A9.79 9.79 0 0 1 2.182 12c0-5.422 4.396-9.818 9.818-9.818 5.422 0 9.818 4.396 9.818 9.818 0 5.422-4.396 9.818-9.818 9.818z"/></svg>
+          Consultar por WhatsApp
+        </a>
+        <button onclick="closeMod()" style="border:1px solid rgba(255,255,255,0.12);color:#d0c5af;background:transparent;padding:12px;font-size:0.6rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:all .3s" onmouseover="this.style.borderColor='rgba(242,202,80,0.5)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.12)'">
+          Seguir viendo catálogo
+        </button>
+      </div>
     </div>
   </div>
 </div>
+<style>
+@media(max-width:640px){
+  #mPanel{grid-template-columns:1fr!important}
+  #mGallery{min-height:260px}
+}
+.mthumb{
+  width:62px;height:62px;object-fit:cover;cursor:pointer;opacity:.6;border:2px solid transparent;
+  transition:opacity .25s,border-color .25s;flex-shrink:0;
+}
+.mthumb.active,.mthumb:hover{opacity:1;border-color:#f2ca50}
+.mvariant-btn{
+  padding:6px 14px;font-size:0.55rem;letter-spacing:.18em;text-transform:uppercase;
+  border:1.5px solid rgba(255,255,255,0.15);color:#d0c5af;background:transparent;cursor:pointer;
+  transition:all .25s;
+}
+.mvariant-btn.active,.mvariant-btn:hover{border-color:#f2ca50;color:#f2ca50;background:rgba(242,202,80,0.07)}
+</style>
+
+<!-- ══ THEME TOGGLE ══ -->
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambiar modo claro/oscuro" title="Cambiar tema">
+  <!-- Moon icon (shown in dark mode) -->
+  <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f2ca50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
+  </svg>
+  <!-- Sun icon (shown in light mode) -->
+  <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="5"/>
+    <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+    <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+  </svg>
+</button>
 
 <!-- ══ WHATSAPP FLOTANTE ══ -->
 <a href="https://wa.me/573117775923?text=Hola!%20Me%20interesan%20sus%20muebles%20de%20lujo%20%F0%9F%8C%9F"
@@ -948,32 +1086,111 @@ tailwind.config = {
   t.innerHTML=h;
 })();
 
-/* ══ CATALOG DATA ══ */
+/* ══ CATALOG DATA — con variantes de color estilo Shopify ══ */
+// Cada ítem puede ser:
+//   { name, ref, images: ['img1','img2',...], variants: [{label, img}] }
+// O simplemente un string (filename) para catálogos sin variantes.
+
 var catalogData = {
   salas: [
     'Sala_1.jpeg','Sala_2.jpeg','Sala_3.jpeg','Sala_4.jpeg','Sala_5.jpeg',
     'Sala_6.jpeg','Sala_7.jpeg','Sala_8.jpeg','Sala_9.jpeg','Sala_10.jpeg',
     'Sala_11.jpeg','Sala_12.jpeg','Sala_13.jpeg','Sala_14.jpeg','Sala_15.jpeg',
-    'Sala_16.jpeg','Sala_17.jpeg','Sala_18.jpeg','Sala_19.jpeg','Sala_20.jpeg',
+    'Sala_16.jpeg',
+    // Sala 17 con Sala_28 extra
+    { name: 'Sala de Lujo Dorada', images: ['Sala_17.jpeg','Sala_28.jpeg'] },
+    'Sala_18.jpeg','Sala_19.jpeg','Sala_20.jpeg',
     'Sala_21.jpeg','Sala_22.jpeg','Sala_23.jpeg','Sala_24.jpeg','Sala_25.jpeg',
-    'Sala_26.jpeg','Sala_27.jpeg'
+    'Sala_26.jpeg','Sala_27.jpeg',
+    // Sala_29 y Sala_30 juntas
+    { name: 'Sala de Lujo Contemporánea', images: ['Sala_29.jpeg','Sala_30.jpeg'] },
+    // Sofa_20 en salas
+    'Sofa_20.jpeg'
   ],
   alcobaslujo: [
-    'Alcoba_1.jpeg','Alcoba_2.jpeg','Alcoba_3.jpeg','Alcoba_4.jpeg','Alcoba_5.jpeg',
-    'Alcoba_6.jpeg','Alcoba_7.jpeg','Alcoba_8.jpeg','Alcoba_9.jpeg','Alcoba_10.jpeg',
-    'Alcoba_11.jpeg','Alcoba_12.jpeg','Alcoba_13.jpeg','Alcoba_14.jpeg','Alcoba_15.jpeg',
-    'Alcoba_16.jpeg','Alcoba_17.jpeg','Alcoba_18.jpeg','Alcoba_19.jpeg','Alcoba_20.jpeg',
-    'Alcoba_21.jpeg','Alcoba_22.jpeg','Alcoba_23.jpeg','Alcoba_24.jpeg','Alcoba_25.jpeg',
-    'Alcoba_26.jpeg','Alcoba_27.jpeg','Alcoba_28.jpeg','Alcoba_29.jpeg','Alcoba_30.jpeg',
-    'Alcoba_31.jpeg','Alcoba_32.jpeg','Alcoba_33.jpeg','Alcoba_34.jpeg','Alcoba_35.jpeg',
-    'Alcoba_36.jpeg','Alcoba_37.jpeg'
+    // REF 1 — 1, 2, 34 (tonos beige/blanco/natural) + fotos extra
+    {
+      name: 'Alcoba de Lujo Elegance',
+      images: ['Alcoba_1.jpeg','1yyy2.jpeg','1yy2.jpeg','1y2.jpeg'],
+      variants: [
+        { label: 'Beige', img: 'Alcoba_34.jpeg' },
+        { label: 'Blanco', img: 'Alcoba_2.jpeg' },
+        { label: 'Tono Natural', img: 'Alcoba_1.jpeg' }
+      ]
+    },
+    // REF 2 — Clásica con y3
+    { name: 'Alcoba de Lujo Clásica', images: ['Alcoba_3.jpeg','y3.jpeg'] },
+    // REF 3 — Alcoba_4 con Alcoba_56 (va con la 4 y la 27 vieja)
+    { name: 'Alcoba de Lujo Imperial', images: ['Alcoba_4.jpeg','Alcoba_27.jpeg','Alcoba_56.jpeg'] },
+    // REF 4 — 5, 24, 40, 51, 52, 53, 54 (todas van con ref 5 vieja/nueva)
+    {
+      name: 'Alcoba de Lujo Harmony',
+      images: ['Alcoba_5.jpeg','Alcoba_24.jpeg','Alcoba_40.jpeg','Alcoba_51.jpeg','Alcoba_52.jpeg','Alcoba_53.jpeg','Alcoba_54.jpeg']
+    },
+    // REF 5 — Serena (6 y 7)
+    { name: 'Alcoba de Lujo Serena', images: ['Alcoba_6.jpeg','Alcoba_7.jpeg'] },
+    // REF 6 — Alcoba_10
+    'Alcoba_10.jpeg',
+    // REF 7 — 12 con 38 y 57
+    { name: 'Alcoba de Lujo Grand', images: ['Alcoba_12.jpeg','Alcoba_38.jpeg','Alcoba_57.jpeg'] },
+    'Alcoba_13.jpeg',
+    'Alcoba_14.jpeg',
+    'Alcoba_15.jpeg',
+    'Alcoba_16.jpeg',
+    'Alcoba_17.jpeg',
+    'Alcoba_18.jpeg',
+    'Alcoba_19.jpeg',
+    // REF 22 nueva (Alcoba_23) con Alcoba_48
+    { name: 'Alcoba de Lujo Sublime', images: ['Alcoba_23.jpeg','Alcoba_48.jpeg'] },
+    'Alcoba_25.jpeg',
+    // Alcoba_26 va con 36 y 44
+    { name: 'Alcoba de Lujo Aurora', images: ['Alcoba_26.jpeg','Alcoba_36.jpeg','Alcoba_44.jpeg'] },
+    'Alcoba_28.jpeg',
+    'Alcoba_29.jpeg',
+    'Alcoba_31.jpeg',
+    // Alcoba_33 con Alcoba_42 y Alcoba_43
+    { name: 'Alcoba de Lujo Velvet', images: ['Alcoba_33.jpeg','Alcoba_42.jpeg','Alcoba_43.jpeg'] },
+    // Alcoba_35
+    'Alcoba_35.jpeg',
+    // 37 tono negro
+    { name: 'Alcoba de Lujo Noir', images: ['Alcoba_37.jpeg'], variants: [{ label: 'Negro', img: 'Alcoba_37.jpeg' }] },
+    // Alcoba_39
+    { name: 'Alcoba de Lujo Prestige', images: ['Alcoba_39.jpeg'] },
+    // Alcoba_41 (va con ref 5 → Harmony, pero tb standalone si es diferente modelo)
+    // Nueva 41 — va con la #5 (Harmony), ya incluida arriba como Alcoba_40
+    // Alcoba_42, 43 ya incluidas en Velvet
+    // Alcoba_46 y 47 juntas
+    { name: 'Alcoba de Lujo Riviera', images: ['Alcoba_46.jpeg','Alcoba_47.jpeg'] },
+    // Alcoba_49 y 50 independientes
+    'Alcoba_49.jpeg',
+    'Alcoba_50.jpeg',
+    // Alcoba_55 independiente
+    'Alcoba_55.jpeg'
   ],
   alcobasmin: [
-    'AlcobaM_1.jpeg','AlcobaM_2.jpeg','AlcobaM_3.jpeg','AlcobaM_4.jpeg','AlcobaM_5.jpeg',
-    'AlcobaM_6.jpeg','AlcobaM_7.jpeg','AlcobaM_8.jpeg','AlcobaM_9.jpeg','AlcobaM_10.jpeg',
-    'AlcobaM_11.jpeg','AlcobaM_12.jpeg','AlcobaM_13.jpeg','AlcobaM_14.jpeg','AlcobaM_15.jpeg',
-    'AlcobaM_16.jpeg','AlcobaM_17.jpeg','AlcobaM_18.jpeg','AlcobaM_19.jpeg','AlcobaM_20.jpeg',
-    'AlcobaM_21.jpeg','AlcobaM_22.jpeg','AlcobaM_23.jpeg','AlcobaM_24.jpeg','AlcobaM_25.jpeg'
+    'AlcobaM_1.jpeg',
+    // 2, 8, 17, 21, 25, 22, 20 juntas
+    { name: 'Alcoba Minimalista Blanca', images: ['AlcobaM_2.jpeg','AlcobaM_8.jpeg','AlcobaM_17.jpeg','AlcobaM_21.jpeg','AlcobaM_25.jpeg','AlcobaM_22.jpeg','AlcobaM_20.jpeg'] },
+    'AlcobaM_3.jpeg',
+    'AlcobaM_4.jpeg',
+    'AlcobaM_5.jpeg',
+    'AlcobaM_6.jpeg',
+    'AlcobaM_7.jpeg',
+    'AlcobaM_9.jpeg',
+    // 10 eliminada
+    'AlcobaM_11.jpeg',
+    'AlcobaM_12.jpeg',
+    'AlcobaM_13.jpeg',
+    'AlcobaM_14.jpeg',
+    // 15 eliminada
+    'AlcobaM_16.jpeg',
+    // 17 ya incluida en el grupo
+    // 18 eliminada
+    'AlcobaM_19.jpeg',
+    // 20, 21, 22 ya incluidas en el grupo
+    'AlcobaM_23.jpeg',
+    'AlcobaM_24.jpeg'
+    // 25 ya incluida en el grupo
   ],
   sofas: [
     'Sofa_1.jpeg','Sofa_2.jpeg','Sofa_3.jpeg','Sofa_4.jpeg','Sofa_5.jpeg',
@@ -983,9 +1200,16 @@ var catalogData = {
   ],
   comedores: [
     'Comedor_1.jpeg','Comedor_2.jpeg','Comedor_3.jpeg','Comedor_4.jpeg','Comedor_5.jpeg',
-    'Comedor_6.jpeg','Comedor_7.jpeg','Comedor_8.jpeg','Comedor_9.jpeg','Comedor_10.jpeg',
-    'Comedor_11.jpeg','Comedor_12.jpeg','Comedor_13.jpeg','Comedor_14.jpeg','Comedor_15.jpeg',
-    'Comedor_16.jpeg'
+    'Comedor_6.jpeg','Comedor_7.jpeg',
+    // 8 eliminada
+    'Comedor_9.jpeg','Comedor_10.jpeg',
+    // 11 con 12 juntas, luego 12 eliminada como independiente
+    { name: 'Comedor Elegant Suite', images: ['Comedor_11.jpeg','Comedor_12.jpeg'] },
+    'Comedor_13.jpeg',
+    // 14 eliminada
+    'Comedor_15.jpeg','Comedor_16.jpeg',
+    // Nuevos comedores
+    'Comedor_17.jpeg','Comedor_18.jpeg','Comedor_19.jpeg','Comedor_20.jpeg','Comedor_21.jpeg'
   ]
 };
 
@@ -997,44 +1221,77 @@ var sectionNames = {
   comedores:'Comedor'
 };
 
+/* Normalise item to object */
+function normItem(item, idx, sectionLabel) {
+  if (typeof item === 'string') {
+    return { name: sectionLabel + ' #' + (idx+1), images: [item], variants: null };
+  }
+  if (!item.name) item.name = sectionLabel + ' #' + (idx+1);
+  if (!item.images) item.images = [];
+  return item;
+}
+
 /* BUILD GRID */
 function buildGrid(sectionKey){
-  var imgs = catalogData[sectionKey];
+  var items = catalogData[sectionKey];
   var gridEl = document.getElementById('grid-'+sectionKey);
   if(!gridEl||gridEl.dataset.built) return;
   gridEl.dataset.built='1';
 
   var label = sectionNames[sectionKey];
-  imgs.forEach(function(filename, idx){
-    var num = idx+1;
-    var refStr = String(num).padStart(3,'0');
+  items.forEach(function(rawItem, idx){
+    var item = normItem(rawItem, idx, label);
+    var mainImg = item.images[0] || '';
+    var refStr = String(idx+1).padStart(3,'0');
+    var hasVariants = item.variants && item.variants.length > 1;
+    var hasMultiImg = item.images.length > 1;
+    var hasExtra = hasVariants || hasMultiImg;
+
     var card = document.createElement('div');
     card.className='cat-card rv';
     card.style.transitionDelay=(idx%6*0.06)+'s';
+
+    // Color variant swatches HTML
+    var swatchesHtml = '';
+    if (hasVariants) {
+      swatchesHtml = '<div class="flex gap-1 mt-2 flex-wrap">';
+      item.variants.forEach(function(v,vi){
+        swatchesHtml += '<span class="variant-dot'+(vi===0?' active':'')+'" data-img="'+v.img+'" title="'+v.label+'" style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#888;border:1.5px solid '+(vi===0?'#f2ca50':'rgba(255,255,255,0.25)')+';cursor:pointer;transition:border-color .2s;" onclick="event.stopPropagation();this.closest(\'.cat-card\').querySelector(\'img.main-card-img\').src=this.dataset.img;this.closest(\'.cat-card\').querySelectorAll(\'.variant-dot\').forEach(function(d){d.style.borderColor=\'rgba(255,255,255,0.25)\'});this.style.borderColor=\'#f2ca50\';"></span>';
+      });
+      swatchesHtml += '</div>';
+    }
+
+    // Badge
+    var badgeHtml = '';
+    if (hasVariants) badgeHtml = '<div style="position:absolute;top:10px;right:10px;z-index:4;background:rgba(242,202,80,0.92);color:#3c2f00;font-size:0.44rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:3px 8px;">'+item.variants.length+' Colores</div>';
+    else if (hasMultiImg) badgeHtml = '<div style="position:absolute;top:10px;right:10px;z-index:4;background:rgba(242,202,80,0.92);color:#3c2f00;font-size:0.44rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:3px 8px;">'+item.images.length+' Fotos</div>';
 
     card.innerHTML=
       '<div class="card-img-wrap">'+
         '<div class="bracket-tl"></div>'+
         '<div class="bracket-br"></div>'+
-        '<img src="'+filename+'" alt="'+label+' referencia '+refStr+' — mueble de lujo Atenea\'s Luxury Pereira" loading="lazy"/>'+
+        badgeHtml+
+        '<img class="main-card-img" src="'+mainImg+'" alt="'+item.name+' — mueble de lujo Atenea\'s Luxury Pereira" loading="lazy"/>'+
         '<div class="detail-overlay">'+
           '<div class="flex gap-2 mt-3">'+
-            '<button class="o-detail champagne-gradient text-on-primary px-4 py-2 text-[0.54rem] tracking-widest uppercase font-bold hover:opacity-90 transition-opacity" data-img="'+filename+'" data-name="'+label+' #'+num+'" data-ref="'+refStr+'">Ver detalle</button>'+
-            '<a href="https://wa.me/573117775923?text=Hola!%20Me%20interesa%20el%20'+encodeURIComponent(label)+'+%23'+num+'%20que%20vi%20en%20el%20cat%C3%A1logo%20%F0%9F%8C%9F" target="_blank" rel="noopener" class="border border-white/20 text-white px-4 py-2 text-[0.54rem] tracking-widest uppercase hover:border-primary hover:text-primary transition-colors">Consultar</a>'+
+            '<button class="o-detail champagne-gradient text-on-primary px-4 py-2 text-[0.54rem] tracking-widest uppercase font-bold hover:opacity-90 transition-opacity">Ver detalle</button>'+
+            '<a href="https://wa.me/573117775923?text=Hola!%20Me%20interesa%20'+encodeURIComponent(item.name)+'%20que%20vi%20en%20el%20cat%C3%A1logo%20%F0%9F%8C%9F" target="_blank" rel="noopener" class="border border-white/20 text-white px-4 py-2 text-[0.54rem] tracking-widest uppercase hover:border-primary hover:text-primary transition-colors">Consultar</a>'+
           '</div>'+
         '</div>'+
       '</div>'+
       '<div class="py-4 px-3 flex items-start justify-between gap-2 border-t border-white/5">'+
-        '<div>'+
+        '<div style="flex:1;min-width:0">'+
           '<div class="text-[0.5rem] tracking-[0.28em] uppercase text-primary mb-1">Ref. '+refStr+'</div>'+
-          '<div class="font-headline text-xl italic leading-snug">'+label+' #'+num+'</div>'+
+          '<div class="font-headline text-xl italic leading-snug">'+item.name+'</div>'+
+          swatchesHtml+
         '</div>'+
         '<span class="text-primary text-base mt-1 flex-shrink-0" aria-hidden="true" style="font-size:1.1rem">→</span>'+
       '</div>';
 
     card.querySelector('.o-detail').addEventListener('click',function(e){
       e.stopPropagation();
-      openMod(this.dataset.img, this.dataset.name, this.dataset.ref);
+      var currentImg = card.querySelector('img.main-card-img').src;
+      openModFull(item, refStr, currentImg);
     });
 
     gridEl.appendChild(card);
@@ -1066,17 +1323,88 @@ function showSection(key, btn){
   observeRv();
 }
 
-/* MODAL */
-function openMod(imgSrc, name, ref){
-  var mi=document.getElementById('mImg');
-  mi.src=imgSrc;
-  mi.alt=name+' — mueble de lujo Atenea\'s Luxury';
-  document.getElementById('mRef').textContent='Referencia '+ref;
-  document.getElementById('mName').textContent=name;
-  var ov=document.getElementById('mOv');
-  ov.classList.remove('hidden');ov.classList.add('flex');
-  document.body.style.overflow='hidden';
+/* MODAL — Shopify style */
+function openModFull(item, refStr, activeImg) {
+  var images = item.images || [];
+  if (!images.length && activeImg) images = [activeImg];
+
+  // Set main image
+  var mImg = document.getElementById('mImg');
+  mImg.src = activeImg || images[0] || '';
+  mImg.alt = item.name;
+
+  document.getElementById('mRef').textContent = 'Referencia ' + refStr;
+  document.getElementById('mName').textContent = item.name;
+
+  // WhatsApp link
+  document.getElementById('mWaBtn').href =
+    'https://wa.me/573117775923?text=Hola!%20Me%20interesa%20' +
+    encodeURIComponent(item.name) + '%20que%20vi%20en%20el%20cat%C3%A1logo%20%F0%9F%8C%9F';
+
+  // Thumbnails
+  var thumbsEl = document.getElementById('mThumbs');
+  thumbsEl.innerHTML = '';
+
+  // Combine images + variant images for gallery
+  var allImgs = images.slice();
+  if (item.variants) {
+    item.variants.forEach(function(v){
+      if (allImgs.indexOf(v.img) === -1) allImgs.push(v.img);
+    });
+  }
+
+  if (allImgs.length > 1) {
+    allImgs.forEach(function(src) {
+      var th = document.createElement('img');
+      th.src = src;
+      th.className = 'mthumb' + (src === (activeImg||images[0]) ? ' active' : '');
+      th.onclick = function() {
+        mImg.src = src;
+        thumbsEl.querySelectorAll('.mthumb').forEach(function(t){ t.classList.remove('active'); });
+        th.classList.add('active');
+      };
+      thumbsEl.appendChild(th);
+    });
+    thumbsEl.style.display = 'flex';
+  } else {
+    thumbsEl.style.display = 'none';
+  }
+
+  // Color variants
+  var varWrap = document.getElementById('mVariantsWrap');
+  var varEl = document.getElementById('mVariants');
+  varEl.innerHTML = '';
+  if (item.variants && item.variants.length > 1) {
+    item.variants.forEach(function(v, vi) {
+      var btn = document.createElement('button');
+      btn.className = 'mvariant-btn' + (vi === 0 ? ' active' : '');
+      btn.textContent = v.label;
+      btn.onclick = function() {
+        mImg.src = v.img;
+        varEl.querySelectorAll('.mvariant-btn').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        // Sync thumb
+        thumbsEl.querySelectorAll('.mthumb').forEach(function(t){
+          t.classList.toggle('active', t.src.endsWith(v.img) || t.src === v.img);
+        });
+      };
+      varEl.appendChild(btn);
+    });
+    varWrap.style.display = 'block';
+  } else {
+    varWrap.style.display = 'none';
+  }
+
+  var ov = document.getElementById('mOv');
+  ov.classList.remove('hidden'); ov.classList.add('flex');
+  document.body.style.overflow = 'hidden';
 }
+
+/* Legacy wrapper for non-variant items */
+function openMod(imgSrc, name, ref) {
+  openModFull({ name: name, images: [imgSrc], variants: null }, ref, imgSrc);
+}
+
 function closeMod(){
   var ov=document.getElementById('mOv');
   ov.classList.add('hidden');ov.classList.remove('flex');
@@ -1091,6 +1419,28 @@ function observeRv(){
   },{threshold:.07});
   els.forEach(function(el){ob.observe(el);});
 }
+
+/* THEME TOGGLE */
+function toggleTheme(){
+  var html = document.documentElement;
+  if(html.classList.contains('light')){
+    html.classList.remove('light');
+    html.classList.add('dark');
+    localStorage.setItem('ateneas-theme','dark');
+  } else {
+    html.classList.remove('dark');
+    html.classList.add('light');
+    localStorage.setItem('ateneas-theme','light');
+  }
+}
+// Restore saved theme
+(function(){
+  var saved = localStorage.getItem('ateneas-theme');
+  if(saved === 'light'){
+    document.documentElement.classList.remove('dark');
+    document.documentElement.classList.add('light');
+  }
+})();
 
 /* NAV MOBILE */
 document.getElementById('burger').addEventListener('click',function(){document.getElementById('mobMenu').classList.add('open');});
