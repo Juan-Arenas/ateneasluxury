@@ -1860,7 +1860,7 @@
       var pool = sectionNamePools[sectionKey];
       var creativeName = (pool && pool[idx]) ? pool[idx] : (sectionLabel + ' #' + (idx + 1));
       if (typeof item === 'string') {
-        return { name: creativeName, images: [item], variants: null };
+        return { name: creativeName, images: [item], variants: null, sectionKey: sectionKey };
       }
       if (!item.name) item.name = creativeName;
       if (!item.images) item.images = [];
@@ -1966,13 +1966,18 @@
       document.getElementById('mRef').textContent = 'Referencia ' + refStr;
       document.getElementById('mName').textContent = item.name;
 
-      // Dynamic Description based on category
-      var category = sectionNames[item.sectionKey] || 'Mueble';
-      var isFemale = (item.sectionKey === 'salas' || item.sectionKey === 'alcobaslujo' || item.sectionKey === 'alcobasmin');
-      var adj = isFemale ? 'fabricada' : 'fabricado';
+      // Dynamic Description — Gender & Category agreement
+      var prefixes = { 
+        salas: 'Sala de lujo fabricada', 
+        alcobaslujo: 'Alcoba de lujo fabricada', 
+        alcobasmin: 'Alcoba de lujo fabricada', 
+        sofas: 'Sofá de lujo fabricado', 
+        comedores: 'Comedor de lujo fabricado' 
+      };
+      var start = prefixes[item.sectionKey] || 'Mueble de lujo fabricado';
       
       document.getElementById('mDesc').textContent = 
-        category + ' de lujo ' + adj + ' por artesanos colombianos con materiales de alta calidad. ' +
+        start + ' por artesanos colombianos con materiales de alta calidad. ' +
         'Tapizado resistente seleccionado con rigor, madera noble estructural y espuma de alta densidad. ' +
         'Disponible en múltiples colores y telas según nuestro catálogo de tapizados premium.';
 
