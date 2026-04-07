@@ -1598,10 +1598,8 @@
 
         <!-- Description -->
         <div style="border-top:1px solid rgba(255,255,255,0.07);padding-top:18px">
-          <p class="text-on-surface-variant text-sm leading-relaxed mb-4">
-            Alcoba de lujo fabricada por artesanos colombianos con materiales de alta calidad. Tapizado resistente
-            seleccionado con rigor, madera noble estructural y espuma de alta densidad. Disponible en múltiples colores
-            y telas según nuestro catálogo de tapizados premium.
+          <p id="mDesc" class="text-on-surface-variant text-sm leading-relaxed mb-4">
+            <!-- Dynamic description -->
           </p>
           <p class="neon-gold text-sm leading-relaxed">
             ✦ Fabricamos cualquier tipo de referencia. Si no la ves aquí, ¡nosotros la creamos exactamente como la
@@ -1866,6 +1864,7 @@
       }
       if (!item.name) item.name = creativeName;
       if (!item.images) item.images = [];
+      item.sectionKey = sectionKey;
       return item;
     }
 
@@ -1966,6 +1965,16 @@
 
       document.getElementById('mRef').textContent = 'Referencia ' + refStr;
       document.getElementById('mName').textContent = item.name;
+
+      // Dynamic Description based on category
+      var category = sectionNames[item.sectionKey] || 'Mueble';
+      var isFemale = (item.sectionKey === 'salas' || item.sectionKey === 'alcobaslujo' || item.sectionKey === 'alcobasmin');
+      var adj = isFemale ? 'fabricada' : 'fabricado';
+      
+      document.getElementById('mDesc').textContent = 
+        category + ' de lujo ' + adj + ' por artesanos colombianos con materiales de alta calidad. ' +
+        'Tapizado resistente seleccionado con rigor, madera noble estructural y espuma de alta densidad. ' +
+        'Disponible en múltiples colores y telas según nuestro catálogo de tapizados premium.';
 
       // WhatsApp link
       document.getElementById('mWaBtn').href =
