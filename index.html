@@ -703,21 +703,22 @@
       display: block;
     }
 
-    position:fixed;
-    bottom:28px;
-    right:28px;
-    z-index:300;
-    width:58px;
-    height:58px;
-    border-radius:50%;
-    background:linear-gradient(135deg, #25d366, #128c7e);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 6px 30px rgba(37, 211, 102, .45);
-    transition:transform .3s,
-    box-shadow .3s;
-    animation:wa-pulse 2.5s ease-in-out infinite;
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 300;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 30px rgba(37, 211, 102, .45);
+      transition: transform .3s,
+        box-shadow .3s;
+      animation: wa-pulse 2.5s ease-in-out infinite;
     }
 
     .wa-float:hover {
@@ -735,6 +736,12 @@
       50% {
         box-shadow: 0 6px 50px rgba(37, 211, 102, .75), 0 0 0 8px rgba(37, 211, 102, .1)
       }
+    }
+
+    .neon-gold {
+      color: #f2ca50;
+      text-shadow: 0 0 10px rgba(242, 202, 80, 0.8), 0 0 20px rgba(212, 175, 55, 0.4);
+      font-weight: 700;
     }
   </style>
 </head>
@@ -1591,10 +1598,14 @@
 
         <!-- Description -->
         <div style="border-top:1px solid rgba(255,255,255,0.07);padding-top:18px">
-          <p class="text-on-surface-variant text-sm leading-relaxed">
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-4">
             Alcoba de lujo fabricada por artesanos colombianos con materiales de alta calidad. Tapizado resistente
             seleccionado con rigor, madera noble estructural y espuma de alta densidad. Disponible en múltiples colores
             y telas según nuestro catálogo de tapizados premium.
+          </p>
+          <p class="neon-gold text-sm leading-relaxed">
+            ✦ Fabricamos cualquier tipo de referencia. Si no la ves aquí, ¡nosotros la creamos exactamente como la
+            quieras!
           </p>
           <ul style="margin-top:14px;display:flex;flex-direction:column;gap:6px"
             class="text-on-surface-variant text-xs">
@@ -1784,12 +1795,13 @@
         { images: ['Alcoba_38.jpeg', 'Alcoba_57.jpeg'] },
         'Alcoba_49.jpeg',
         'Alcoba_50.jpeg',
-        'Alcoba_55.jpeg'
+        'Alcoba_55.jpeg',
+        // Referencia burbuja movida desde minimalistas
+        { images: ['AlcobaM_8.jpeg', 'AlcobaM_17.jpeg', 'AlcobaM_21.jpeg', 'AlcobaM_2.jpeg', 'AlcobaM_19.jpeg'] }
       ],
       alcobasmin: [
         'AlcobaM_1.jpeg',
         { images: ['AlcobaM_25.jpeg', 'AlcobaM_22.jpeg', 'AlcobaM_20.jpeg'] },
-        { images: ['AlcobaM_8.jpeg', 'AlcobaM_17.jpeg', 'AlcobaM_21.jpeg', 'AlcobaM_2.jpeg', 'AlcobaM_19.jpeg'] },
         'AlcobaM_3.jpeg',
         'AlcobaM_4.jpeg',
         'AlcobaM_5.jpeg',
