@@ -494,7 +494,7 @@ tailwind.config = {
         Trabajamos con artesanos colombianos de décadas de experiencia. Cada sala, cada alcoba y cada sofá es fabricado con materiales premium y tapizados de alta resistencia seleccionados con rigor. Desde salas clásicas de lujo hasta alcobas minimalistas modernas, nuestro catálogo ofrece más de 100 referencias únicas para satisfacer todos los gustos y estilos de vida.
       </p>
       <p class="text-on-surface-variant text-base leading-relaxed mb-5">
-        Atendemos clientes de toda la <strong class="text-on-surface">región cafetera</strong> — Pereira, Manizales, Armenia, Medellín y más allá — con envío a nivel nacional. Visita nuestro Local en <strong class="text-on-surface">Calle 16 #14-08, junto al Pereira Plaza</strong> y vive la experiencia de tocar, sentir y enamorarte de tu mueble perfecto antes de decidir.
+        Atendemos clientes de toda la <strong class="text-on-surface">región cafetera</strong> — Pereira, Manizales, Armenia, Medellín y más allá — con envío a nivel nacional. Visita nuestro showroom en <strong class="text-on-surface">Calle 16 #14-08, junto al Pereira Plaza</strong> y vive la experiencia de tocar, sentir y enamorarte de tu mueble perfecto antes de decidir.
       </p>
       <p class="text-on-surface-variant text-base leading-relaxed">
         Contamos con sistema de pago flexible, planes de separado y financiación adaptada a tu comodidad. Tu hogar merece lo mejor — y en Atenea's Luxury, lo mejor es lo que hacemos cada día.
@@ -527,8 +527,8 @@ tailwind.config = {
         <div class="w-11 h-11 mb-6 flex items-center justify-center border border-primary/30 text-primary group-hover:bg-primary/10 transition-colors">
           <svg width="26" height="26" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 39V18L24 8L40 18V39Z" stroke="currentColor" stroke-width="1.5"/><rect x="18" y="27" width="12" height="12" stroke="currentColor" stroke-width="1.3"/></svg>
         </div>
-        <h3 class="font-headline text-xl mb-3">Local en Pereira</h3>
-        <p class="text-sm text-on-surface-variant leading-relaxed">Nuestro Local físico en Pereira, Risaralda, junto al Pereira Plaza. Toca, siente y enamórate de tu mueble perfecto antes de decidir.</p>
+        <h3 class="font-headline text-xl mb-3">Showroom en Pereira</h3>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Nuestro showroom físico en Pereira, Risaralda, junto al Pereira Plaza. Toca, siente y enamórate de tu mueble perfecto antes de decidir.</p>
       </div>
     </div>
   </div>
@@ -675,7 +675,7 @@ tailwind.config = {
       <div class="absolute -top-10 -left-10 w-56 h-56 bg-primary/5 rounded-full blur-[80px] pointer-events-none" aria-hidden="true"></div>
       <img class="relative z-10 w-full aspect-[4/5] object-cover"
            src="Sala_5.jpeg"
-           alt="Sala de lujo en Local Atenea's Luxury Pereira — muebles tapizados premium con diseño exclusivo"/>
+           alt="Sala de lujo en showroom Atenea's Luxury Pereira — muebles tapizados premium con diseño exclusivo"/>
       <div class="absolute -bottom-8 -right-8 glass-panel p-7 z-20 max-w-xs hidden md:block">
         <p class="font-headline text-lg italic">"Maderas con el alma, muebles con historia."</p>
         <p class="mt-3 text-[0.65rem] uppercase tracking-widest text-primary">— Atenea's Luxury</p>
@@ -765,7 +765,7 @@ tailwind.config = {
     </div>
     <div class="order-1 md:order-2 space-y-9 rv">
       <span class="text-primary uppercase tracking-[0.4em] text-[0.65rem] block">Encuéntranos</span>
-      <h2 class="font-headline text-5xl md:text-6xl italic">Visita el <span class="text-primary not-italic font-bold">Local</span></h2>
+      <h2 class="font-headline text-5xl md:text-6xl italic">Visita el <span class="text-primary not-italic font-bold">Showroom</span></h2>
       <div class="space-y-6">
         <div>
           <span class="text-primary text-[0.62rem] tracking-[0.3em] uppercase block mb-2">Dirección exacta</span>
@@ -1094,83 +1094,75 @@ tailwind.config = {
 var catalogData = {
   salas: [
     'Sala_1.jpeg','Sala_2.jpeg','Sala_3.jpeg','Sala_4.jpeg','Sala_5.jpeg',
-    'Sala_6.jpeg','Sala_7.jpeg','Sala_8.jpeg','Sala_9.jpeg','Sala_10.jpeg',
-    'Sala_11.jpeg','Sala_12.jpeg','Sala_13.jpeg','Sala_14.jpeg','Sala_15.jpeg',
+    'Sala_6.jpeg','Sala_7.jpeg','Sala_8.jpeg','Sala_9.jpeg',
+    'Sala_12.jpeg','Sala_13.jpeg','Sala_14.jpeg','Sala_15.jpeg',
     'Sala_16.jpeg',
     // Sala 17 con Sala_28 extra
-    { name: 'Sala de Lujo Dorada', images: ['Sala_17.jpeg','Sala_28.jpeg'] },
+    { images: ['Sala_17.jpeg','Sala_28.jpeg'] },
     'Sala_18.jpeg','Sala_19.jpeg','Sala_20.jpeg',
-    'Sala_21.jpeg','Sala_22.jpeg','Sala_23.jpeg','Sala_24.jpeg','Sala_25.jpeg',
+    'Sala_21.jpeg','Sala_22.jpeg','Sala_23.jpeg','Sala_24.jpeg',
     'Sala_26.jpeg','Sala_27.jpeg',
-    // Sala_29 y Sala_30 juntas
-    { name: 'Sala de Lujo Contemporánea', images: ['Sala_29.jpeg','Sala_30.jpeg'] },
-    // Sofa_20 en salas
-    'Sofa_20.jpeg'
+    { images: ['Sala_29.jpeg','Sala_30.jpeg'] }
   ],
   alcobaslujo: [
-    // REF 1 — 1, 2, 34 (tonos beige/blanco/natural) + fotos extra
+    // REF 1 — Elegance: tonos beige/blanco/natural + cama negra (img6) + fotos extra
     {
-      name: 'Alcoba de Lujo Elegance',
-      images: ['Alcoba_1.jpeg','1yyy2.jpeg','1yy2.jpeg','1y2.jpeg'],
+      images: ['Alcoba_1.jpeg','1yyy2.jpeg','1yy2.jpeg','1y2.jpeg','Alcoba_37.jpeg'],
       variants: [
         { label: 'Beige', img: 'Alcoba_34.jpeg' },
         { label: 'Blanco', img: 'Alcoba_2.jpeg' },
-        { label: 'Tono Natural', img: 'Alcoba_1.jpeg' }
+        { label: 'Tono Natural', img: 'Alcoba_1.jpeg' },
+        { label: 'Negro', img: 'Alcoba_37.jpeg' }
       ]
     },
     // REF 2 — Clásica con y3
-    { name: 'Alcoba de Lujo Clásica', images: ['Alcoba_3.jpeg','y3.jpeg'] },
-    // REF 3 — Alcoba_4 con Alcoba_56 (va con la 4 y la 27 vieja)
-    { name: 'Alcoba de Lujo Imperial', images: ['Alcoba_4.jpeg','Alcoba_27.jpeg','Alcoba_56.jpeg'] },
-    // REF 4 — 5, 24, 40, 51, 52, 53, 54 (todas van con ref 5 vieja/nueva)
-    {
-      name: 'Alcoba de Lujo Harmony',
-      images: ['Alcoba_5.jpeg','Alcoba_24.jpeg','Alcoba_40.jpeg','Alcoba_51.jpeg','Alcoba_52.jpeg','Alcoba_53.jpeg','Alcoba_54.jpeg']
-    },
-    // REF 5 — Serena (6 y 7)
-    { name: 'Alcoba de Lujo Serena', images: ['Alcoba_6.jpeg','Alcoba_7.jpeg'] },
-    // REF 6 — Alcoba_10
-    'Alcoba_10.jpeg',
-    // REF 7 — 12 con 38 y 57
-    { name: 'Alcoba de Lujo Grand', images: ['Alcoba_12.jpeg','Alcoba_38.jpeg','Alcoba_57.jpeg'] },
+    { images: ['Alcoba_3.jpeg','y3.jpeg'] },
+    // REF 3 — Imperial
+    { images: ['Alcoba_4.jpeg','Alcoba_27.jpeg','Alcoba_56.jpeg'] },
+    // REF 4 — La cama con cobija de flores azules (Alcoba_24) — SOLA
+    { images: ['Alcoba_24.jpeg'] },
+    'Alcoba_40.jpeg',
+    'Alcoba_51.jpeg',
+    'Alcoba_52.jpeg',
+    'Alcoba_53.jpeg',
+    'Alcoba_54.jpeg',
+    // REF 6 — Alcoba_5 sola (la original de la ref 5 vieja que no es rombos)
+    { images: ['Alcoba_5.jpeg'] },
+    // REF 7 — Serena (6 y 7)
+    { images: ['Alcoba_6.jpeg','Alcoba_7.jpeg'] },
+    // REF 8 — Alcoba_10 ELIMINADA
+    // REF 9 — 12 ELIMINADA (borrar ref 12 de lujo = Alcoba_12 era Grand)
+    // Alcoba_13 continúa
     'Alcoba_13.jpeg',
     'Alcoba_14.jpeg',
-    'Alcoba_15.jpeg',
     'Alcoba_16.jpeg',
-    'Alcoba_17.jpeg',
     'Alcoba_18.jpeg',
     'Alcoba_19.jpeg',
-    // REF 22 nueva (Alcoba_23) con Alcoba_48
-    { name: 'Alcoba de Lujo Sublime', images: ['Alcoba_23.jpeg','Alcoba_48.jpeg'] },
+    // Sublime (Alcoba_23 con 48)
+    { images: ['Alcoba_23.jpeg','Alcoba_48.jpeg'] },
     'Alcoba_25.jpeg',
-    // Alcoba_26 va con 36 y 44
-    { name: 'Alcoba de Lujo Aurora', images: ['Alcoba_26.jpeg','Alcoba_36.jpeg','Alcoba_44.jpeg'] },
+    // Aurora (26, 36, 44)
+    { images: ['Alcoba_26.jpeg','Alcoba_36.jpeg','Alcoba_44.jpeg'] },
     'Alcoba_28.jpeg',
     'Alcoba_29.jpeg',
     'Alcoba_31.jpeg',
-    // Alcoba_33 con Alcoba_42 y Alcoba_43
-    { name: 'Alcoba de Lujo Velvet', images: ['Alcoba_33.jpeg','Alcoba_42.jpeg','Alcoba_43.jpeg'] },
-    // Alcoba_35
+    // Velvet (33, 42, 43)
+    { images: ['Alcoba_33.jpeg','Alcoba_42.jpeg','Alcoba_43.jpeg'] },
     'Alcoba_35.jpeg',
-    // 37 tono negro
-    { name: 'Alcoba de Lujo Noir', images: ['Alcoba_37.jpeg'], variants: [{ label: 'Negro', img: 'Alcoba_37.jpeg' }] },
-    // Alcoba_39
-    { name: 'Alcoba de Lujo Prestige', images: ['Alcoba_39.jpeg'] },
-    // Alcoba_41 (va con ref 5 → Harmony, pero tb standalone si es diferente modelo)
-    // Nueva 41 — va con la #5 (Harmony), ya incluida arriba como Alcoba_40
-    // Alcoba_42, 43 ya incluidas en Velvet
-    // Alcoba_46 y 47 juntas
-    { name: 'Alcoba de Lujo Riviera', images: ['Alcoba_46.jpeg','Alcoba_47.jpeg'] },
-    // Alcoba_49 y 50 independientes
+    // Prestige (39)
+    { images: ['Alcoba_39.jpeg'] },
+    // Riviera (46, 47)
+    { images: ['Alcoba_46.jpeg','Alcoba_47.jpeg'] },
+    // Grand con 38 y 57 (ya sin 12 eliminada)
+    { images: ['Alcoba_38.jpeg','Alcoba_57.jpeg'] },
     'Alcoba_49.jpeg',
     'Alcoba_50.jpeg',
-    // Alcoba_55 independiente
     'Alcoba_55.jpeg'
   ],
   alcobasmin: [
     'AlcobaM_1.jpeg',
     // 2, 8, 17, 21, 25, 22, 20 juntas
-    { name: 'Alcoba Minimalista Blanca', images: ['AlcobaM_2.jpeg','AlcobaM_8.jpeg','AlcobaM_17.jpeg','AlcobaM_21.jpeg','AlcobaM_25.jpeg','AlcobaM_22.jpeg','AlcobaM_20.jpeg'] },
+    { images: ['AlcobaM_2.jpeg','AlcobaM_8.jpeg','AlcobaM_17.jpeg','AlcobaM_21.jpeg','AlcobaM_25.jpeg','AlcobaM_22.jpeg','AlcobaM_20.jpeg'] },
     'AlcobaM_3.jpeg',
     'AlcobaM_4.jpeg',
     'AlcobaM_5.jpeg',
@@ -1196,15 +1188,17 @@ var catalogData = {
     'Sofa_1.jpeg','Sofa_2.jpeg','Sofa_3.jpeg','Sofa_4.jpeg','Sofa_5.jpeg',
     'Sofa_6.jpeg','Sofa_7.jpeg','Sofa_8.jpeg','Sofa_9.jpeg','Sofa_10.jpeg',
     'Sofa_11.jpeg','Sofa_12.jpeg','Sofa_13.jpeg','Sofa_14.jpeg','Sofa_15.jpeg',
-    'Sofa_16.jpeg','Sofa_17.jpeg','Sofa_18.jpeg','Sofa_19.jpeg'
+    'Sofa_16.jpeg','Sofa_18.jpeg','Sofa_19.jpeg',
+    // Sofa_20 movido desde salas
+    'Sofa_20.jpeg'
   ],
   comedores: [
     'Comedor_1.jpeg','Comedor_2.jpeg','Comedor_3.jpeg','Comedor_4.jpeg','Comedor_5.jpeg',
-    'Comedor_6.jpeg','Comedor_7.jpeg',
+    'Comedor_7.jpeg',
     // 8 eliminada
     'Comedor_9.jpeg','Comedor_10.jpeg',
     // 11 con 12 juntas, luego 12 eliminada como independiente
-    { name: 'Comedor Elegant Suite', images: ['Comedor_11.jpeg','Comedor_12.jpeg'] },
+    { images: ['Comedor_11.jpeg','Comedor_12.jpeg'] },
     'Comedor_13.jpeg',
     // 14 eliminada
     'Comedor_15.jpeg','Comedor_16.jpeg',
@@ -1217,16 +1211,28 @@ var sectionNames = {
   salas:'Sala',
   alcobaslujo:'Alcoba de Lujo',
   alcobasmin:'Alcoba Minimalista',
-  sofas:'Sofá / Sofacama',
+  sofas:'Sofá',
   comedores:'Comedor'
 };
 
+// Creative name pools per section
+var sectionNamePools = {
+  salas: [],
+  alcobaslujo: [],
+  alcobasmin: [],
+  sofas: [],
+  comedores: []
+};
+
 /* Normalise item to object */
-function normItem(item, idx, sectionLabel) {
+function normItem(item, idx, sectionKey) {
+  var sectionLabel = sectionNames[sectionKey] || sectionKey;
+  var pool = sectionNamePools[sectionKey];
+  var creativeName = (pool && pool[idx]) ? pool[idx] : (sectionLabel + ' #' + (idx+1));
   if (typeof item === 'string') {
-    return { name: sectionLabel + ' #' + (idx+1), images: [item], variants: null };
+    return { name: creativeName, images: [item], variants: null };
   }
-  if (!item.name) item.name = sectionLabel + ' #' + (idx+1);
+  if (!item.name) item.name = creativeName;
   if (!item.images) item.images = [];
   return item;
 }
@@ -1240,7 +1246,7 @@ function buildGrid(sectionKey){
 
   var label = sectionNames[sectionKey];
   items.forEach(function(rawItem, idx){
-    var item = normItem(rawItem, idx, label);
+    var item = normItem(rawItem, idx, sectionKey);
     var mainImg = item.images[0] || '';
     var refStr = String(idx+1).padStart(3,'0');
     var hasVariants = item.variants && item.variants.length > 1;
@@ -1251,15 +1257,8 @@ function buildGrid(sectionKey){
     card.className='cat-card rv';
     card.style.transitionDelay=(idx%6*0.06)+'s';
 
-    // Color variant swatches HTML
+    // Color variant swatches HTML — REMOVED (no dots on cards)
     var swatchesHtml = '';
-    if (hasVariants) {
-      swatchesHtml = '<div class="flex gap-1 mt-2 flex-wrap">';
-      item.variants.forEach(function(v,vi){
-        swatchesHtml += '<span class="variant-dot'+(vi===0?' active':'')+'" data-img="'+v.img+'" title="'+v.label+'" style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#888;border:1.5px solid '+(vi===0?'#f2ca50':'rgba(255,255,255,0.25)')+';cursor:pointer;transition:border-color .2s;" onclick="event.stopPropagation();this.closest(\'.cat-card\').querySelector(\'img.main-card-img\').src=this.dataset.img;this.closest(\'.cat-card\').querySelectorAll(\'.variant-dot\').forEach(function(d){d.style.borderColor=\'rgba(255,255,255,0.25)\'});this.style.borderColor=\'#f2ca50\';"></span>';
-      });
-      swatchesHtml += '</div>';
-    }
 
     // Badge
     var badgeHtml = '';
